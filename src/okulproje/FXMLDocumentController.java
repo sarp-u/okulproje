@@ -5,6 +5,8 @@
  */
 package okulproje;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -24,22 +27,26 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private Label label;
-    
-    public void changeScreenButtonClicked(ActionEvent event) throws IOException{
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("employee.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-        
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
-        
-    }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void handleClose(javafx.scene.input.MouseEvent event) {
+        System.exit(0);
+    }
+
+    @FXML
+    private void changeScreenButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("employeeMain.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
     
 }

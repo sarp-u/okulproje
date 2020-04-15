@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.EmployeeMainController">
+   <left>
+      <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
+         <children>
+            <AnchorPane maxWidth="75.0" prefHeight="600.0" prefWidth="75.0" style="-fx-background-color: #221436;" HBox.hgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="8.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="240.0">
+                     <image>
+                        <Image url="@../images/iconfinder_simpline_13_2305639.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../images/iconfinder_color-web3-14_5094675.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
+                     <image>
+                        <Image url="@../images/iconfinder_Icon_Paper_and_Pen_3319424.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="76.0" fitWidth="76.0" layoutY="473.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="40.0">
+                     <image>
+                        <Image url="@../images/iconfinder_simpline_43_2305619.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="8.0" layoutY="70.0" prefHeight="37.0" prefWidth="79.0" text="Anasayfa" textFill="#d5dadd" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="195.0" text="Rapor" textFill="#d5dadd" AnchorPane.rightAnchor="17.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="300.0" text="Çalışanlar" textFill="#d5dadd">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="560.0" text="Çıkış" textFill="#d5dadd" AnchorPane.bottomAnchor="20.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Region layoutX="13.0" layoutY="331.0" prefHeight="20.0" prefWidth="44.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></AnchorPane>
+            <AnchorPane prefHeight="600.0" prefWidth="120.0">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="40.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../images/listele.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="86.0" text="Çalışanları Listele" textFill="#d5dadd" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="85.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="35.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="120.0">
+                     <image>
+                        <Image url="@../images/ekle.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="29.0" layoutY="193.0" text="Çalışan Ekle" textFill="#d5dadd" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="185.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="15.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="220.0">
+                     <image>
+                        <Image url="@../images/düzenle.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="15.0" layoutY="290.0" text="Çalışanı Düzenle" textFill="#d5dadd" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="285.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="320.0">
+                     <image>
+                        <Image url="@../images/sil.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="35.0" layoutY="388.0" text="Çalışan Sil" textFill="#d5dadd" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="385.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </left>
+   <center>
+      <Label text="Çalışan sayfasına hoş geldiniz" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

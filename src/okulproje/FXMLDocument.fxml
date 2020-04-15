@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.FXMLDocumentController">
-    <children>
-        <Button fx:id="button" layoutX="218.0" layoutY="348.0" onAction="#changeScreenButtonClicked" text="Click Me!" />
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-    </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.FXMLDocumentController">
+   <left>
+      <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
+         <children>
+            <AnchorPane maxWidth="75.0" prefHeight="600.0" prefWidth="75.0" style="-fx-background-color: #221436;" HBox.hgrow="NEVER">
+               <children>
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="8.0" layoutY="252.0" onMouseClicked="#changeScreenButtonClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="240.0">
+                     <image>
+                        <Image url="@../images/iconfinder_simpline_13_2305639.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="14.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../images/iconfinder_color-web3-14_5094675.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
+                     <image>
+                        <Image url="@../images/iconfinder_Icon_Paper_and_Pen_3319424.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="76.0" fitWidth="76.0" layoutY="473.0" onMouseClicked="#handleClose" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="40.0">
+                     <image>
+                        <Image url="@../images/iconfinder_simpline_43_2305619.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="8.0" layoutY="70.0" prefHeight="37.0" prefWidth="79.0" text="Anasayfa" textFill="#d5dadd" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="195.0" text="Rapor" textFill="#d5dadd" AnchorPane.rightAnchor="17.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="300.0" text="Çalışanlar" textFill="#d5dadd">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="560.0" text="Çıkış" textFill="#d5dadd" AnchorPane.bottomAnchor="20.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Region layoutX="13.0" layoutY="331.0" prefHeight="20.0" prefWidth="44.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </left>
+</BorderPane>
