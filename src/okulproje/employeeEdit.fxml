@@ -9,13 +9,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.EmployeeMainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.EmployeeEditController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
             <AnchorPane maxWidth="75.0" prefHeight="600.0" prefWidth="75.0" style="-fx-background-color: #221436;" HBox.hgrow="NEVER">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="8.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="240.0">
+                  <ImageView fitHeight="65.0" fitWidth="60.0" layoutX="8.0" layoutY="252.0" onMouseClicked="#changeScreenButtonClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="240.0">
                      <image>
                         <Image url="@../images/iconfinder_simpline_13_2305639.png" />
                      </image>
@@ -82,7 +82,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="15.0" layoutY="222.0" onMouseClicked="#handleEmployeeEditScene" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="220.0">
+                  <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="15.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="220.0">
                      <image>
                         <Image url="@../images/düzenle.png" />
                      </image>
@@ -111,7 +111,7 @@
       </HBox>
    </left>
    <center>
-      <Label text="Çalışan sayfasına hoş geldiniz" BorderPane.alignment="CENTER">
+      <Label text="Çalışan düzenleme sayfasına&#10; hoş geldiniz" BorderPane.alignment="CENTER">
          <font>
             <Font size="41.0" />
          </font>

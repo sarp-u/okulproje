@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author fener
  */
-public class EmployeeMainController implements Initializable {
+public class EmployeeEditController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -31,7 +31,7 @@ public class EmployeeMainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    
+
     @FXML
     private void handleMainScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -40,7 +40,17 @@ public class EmployeeMainController implements Initializable {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
-    }    
+    }
+
+    @FXML
+    private void changeScreenButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("employeeMain.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
     
     @FXML
     private void handleEmployeeAddScene(MouseEvent event) throws IOException{
@@ -61,17 +71,7 @@ public class EmployeeMainController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
-    @FXML
-    private void handleEmployeeEditScene(MouseEvent event) throws IOException{
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("employeeEdit.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-        
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
-    }
-    
+
     @FXML
     private void handleEmployeeListScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("employeeList.fxml"));
@@ -81,8 +81,6 @@ public class EmployeeMainController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
-    
 
     @FXML
     private void handleClose(MouseEvent event) {
