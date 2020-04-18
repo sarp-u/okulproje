@@ -41,6 +41,17 @@ public class EmployeeListController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
+    
+       @FXML
+    private void handleReportScene(MouseEvent event) throws IOException{
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }    
+
 
     @FXML
     private void changeScreenButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {

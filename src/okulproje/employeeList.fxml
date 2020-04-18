@@ -25,7 +25,7 @@
                         <Image url="@../images/iconfinder_Home_2125603.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" onMouseClicked="#handleReportScene" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
                      <image>
                         <Image url="@../images/iconfinder_Icon_Paper_and_Pen_3319424.png" />
                      </image>

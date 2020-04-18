@@ -5,40 +5,43 @@
  */
 package okulproje;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
+ * FXML Controller class
  *
  * @author fener
  */
-public class FXMLDocumentController implements Initializable {
-    
+public class ReportMainController implements Initializable {
 
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
 
     @FXML
-    private void handleClose(javafx.scene.input.MouseEvent event) {
-        System.exit(0);
-    }
-
+    private void handleMainScene(MouseEvent event) throws IOException{
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }    
+    
     @FXML
     private void changeScreenButtonClicked(javafx.scene.input.MouseEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("employeeMain.fxml"));
@@ -48,16 +51,10 @@ public class FXMLDocumentController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
-       @FXML
-    private void handleReportScene(javafx.scene.input.MouseEvent event) throws IOException{
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-        
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
-    }    
 
+    @FXML
+    private void handleClose(MouseEvent event) {
+        System.exit(0);
+    }
     
 }

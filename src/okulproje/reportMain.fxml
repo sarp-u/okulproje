@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
@@ -20,12 +20,12 @@
                         <Image url="@../images/iconfinder_simpline_13_2305639.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="13.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="13.0" layoutY="20.0" onMouseClicked="#handleMainScene" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
                      <image>
                         <Image url="@../images/iconfinder_Home_2125603.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" onMouseClicked="#handleReportScene" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="120.0">
                      <image>
                         <Image url="@../images/iconfinder_Icon_Paper_and_Pen_3319424.png" />
                      </image>
@@ -66,11 +66,4 @@
          </BorderPane.margin>
       </HBox>
    </left>
-   <center>
-      <ImageView fitHeight="488.0" fitWidth="683.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../images/2.png" />
-         </image>
-      </ImageView>
-   </center>
 </BorderPane>
