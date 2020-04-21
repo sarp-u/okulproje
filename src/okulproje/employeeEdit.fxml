@@ -111,10 +111,17 @@
       </HBox>
    </left>
    <center>
-      <Label text="Çalışan düzenleme sayfasına&#10; hoş geldiniz" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="41.0" />
-         </font>
-      </Label>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView layoutX="151.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <Button layoutX="510.0" layoutY="574.0" mnemonicParsing="false" text="Düzenle" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
+            <Button layoutX="599.0" layoutY="570.0" mnemonicParsing="false" text="Kayıt Et" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
+         </children>
+      </AnchorPane>
    </center>
 </BorderPane>

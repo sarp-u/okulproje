@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
@@ -66,4 +67,808 @@
          </BorderPane.margin>
       </HBox>
    </left>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="896.0" prefWidth="978.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <GridPane gridLinesVisible="true" layoutX="179.0" layoutY="10.0" prefHeight="105.0" prefWidth="800.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="GÖZETİM MUAYENE VE EĞİTİM HİZMETLERİ" textAlignment="CENTER" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="240.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="29.0" prefWidth="436.0" text="MANYETİK PARÇACIK MUAYENE RAPORU" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="200.0" top="-30.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="MAGNETIC PARTICLE INSPECTION REPORT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="240.0" top="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="105.0" prefHeight="220.0" prefWidth="982.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="134.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="238.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="142.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="191.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="115.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="155.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Müşteri">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Proje Adı" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test Yeri" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Standardı" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Değerlen. Standardı" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Prosedürü" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene  Kapsamı" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Resim No" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey Durumu" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Aşaması" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sayfa No" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rapor No" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rapor Tarihi" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="İş Emri No" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teklif No" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Project Name" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Place" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Standart" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluation Standart" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Procedure" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Scope" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Drawing No" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Condition" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stage of Examination" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Page" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report No" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Job Order No" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Offer No" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="45.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="45.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField alignment="CENTER" prefHeight="25.0" prefWidth="170.0" text="TS EN ISO 17638" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="45.0" right="45.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="TS EN ISO 23278 Class B" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="45.0" right="45.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="P-101-004" GridPane.columnIndex="3">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField alignment="CENTER" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField alignment="CENTER" text="1" GridPane.columnIndex="5">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="325.0" prefWidth="982.0" AnchorPane.rightAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ekipman Bilgileri/">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="370.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment Informations">
+                           <GridPane.margin>
+                              <Insets left="475.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="355.0" prefHeight="264.0" prefWidth="661.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="321.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kutup Mesafesi, mm">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cihaz" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MP Taşıyıcı Ortam" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mıknatıslama Tekniği" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UV Işık Şiddeti" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Işık Mesafesi" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayne Bölgesi" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Akım Tipi" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luxmetre/ Işık Şiddeti" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayne Ortamı" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mıknatıs Giderimi" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isıl İşlem" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pole Distance">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MP Carrier Medium" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mag. Tech." GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UV Light Intensity" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distance of Light" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Examination Area" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Type" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luxmeter" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test Medium" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Demagnetization" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heat Treatment" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <TextField alignment="CENTER" text="KAYNAK+HAZ" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField alignment="CENTER" text="1200 Lux" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" promptText="Zorunlu Değil" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" promptText="Zorunlu Değil" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" promptText="Zorunlu Değil" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutX="657.0" layoutY="355.0" prefHeight="264.0" prefWidth="322.0" AnchorPane.leftAnchor="657.0" AnchorPane.rightAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="66.0" minHeight="10.0" percentHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="106.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey Sıcaklığı (°C)">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayne Bölgesindeki &#10;Alan Şiddeti,&#10;kA/m&#10;" textAlignment="CENTER" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Yüzey" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Işık Cihazı Tanımı" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaldırma Testi Tarih/ No" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Temperature">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surface Condition" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identification of Light Equip." GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lifting Test Date/ Number" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gauss Field Strength" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="25.0" top="50.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <TextField alignment="CENTER" text="3.2 kA/m" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField text="TAŞLANMIŞ/GRİNDİNG" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="..." GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField text="10.09.2019 / LT1902-05" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="619.0" prefHeight="44.0" prefWidth="486.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Süreksizliğin Yeri/">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="140.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location of Discontinuity">
+                           <GridPane.margin>
+                              <Insets left="245.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="663.0" prefHeight="176.0" prefWidth="485.0" AnchorPane.rightAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BM">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="110.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HAZ" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="108.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="W" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="114.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="B" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="114.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ana Metal/" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Isıdan Etkilenen Bölge/" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak/" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak Ağzı/" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Base Metal" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="72.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heat Affected Zone" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="138.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weld" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="55.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bewel" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="83.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutX="-1.0" layoutY="619.0" prefHeight="220.0" prefWidth="494.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="213.0" fitWidth="244.0" layoutX="2.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/2.jpg" />
+                                 </image>
+                              </ImageView>
+                              <CheckBox layoutX="212.0" layoutY="150.0" mnemonicParsing="false" prefHeight="9.0" prefWidth="21.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="149.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <ImageView fitHeight="213.0" fitWidth="244.0" layoutX="2.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <CheckBox layoutX="212.0" layoutY="143.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="2.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
 </BorderPane>
