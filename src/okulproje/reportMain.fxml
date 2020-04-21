@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
@@ -68,11 +68,11 @@
       </HBox>
    </left>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ScrollPane prefHeight="900.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="896.0" prefWidth="978.0" style="-fx-background-color: #ffffff;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1927.0" prefWidth="1028.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <GridPane gridLinesVisible="true" layoutX="179.0" layoutY="10.0" prefHeight="105.0" prefWidth="800.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <GridPane gridLinesVisible="true" layoutX="179.0" layoutY="10.0" prefHeight="105.0" prefWidth="800.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -110,7 +110,7 @@
                         <Insets />
                      </opaqueInsets>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutY="105.0" prefHeight="220.0" prefWidth="982.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0">
+                  <GridPane gridLinesVisible="true" layoutY="105.0" prefHeight="220.0" prefWidth="982.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="13.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="134.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="238.0" />
@@ -387,7 +387,7 @@
                         </ChoiceBox>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutY="325.0" prefWidth="982.0" AnchorPane.rightAnchor="0.0">
+                  <GridPane gridLinesVisible="true" layoutY="325.0" prefWidth="982.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="13.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -410,12 +410,12 @@
                         </Text>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutY="355.0" prefHeight="264.0" prefWidth="661.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="321.0">
+                  <GridPane gridLinesVisible="true" layoutY="355.0" prefHeight="264.0" prefWidth="657.0" AnchorPane.leftAnchor="-1.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="165.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="163.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -614,7 +614,7 @@
                         </TextField>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutX="657.0" layoutY="355.0" prefHeight="264.0" prefWidth="322.0" AnchorPane.leftAnchor="657.0" AnchorPane.rightAnchor="0.0">
+                  <GridPane gridLinesVisible="true" layoutX="657.0" layoutY="355.0" prefHeight="264.0" prefWidth="322.0" AnchorPane.leftAnchor="657.0" AnchorPane.rightAnchor="13.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -714,7 +714,7 @@
                         </TextField>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="619.0" prefHeight="44.0" prefWidth="486.0">
+                  <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="619.0" prefHeight="44.0" prefWidth="486.0" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="13.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -737,7 +737,7 @@
                         </Text>
                      </children>
                   </GridPane>
-                  <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="663.0" prefHeight="176.0" prefWidth="485.0" AnchorPane.rightAnchor="0.0">
+                  <GridPane gridLinesVisible="true" layoutX="494.0" layoutY="663.0" prefHeight="176.0" prefWidth="485.0" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="13.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -864,6 +864,519 @@
                               <CheckBox layoutX="212.0" layoutY="143.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="2.0" />
                            </children>
                         </AnchorPane>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="839.0" prefHeight="132.0" prefWidth="982.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="13.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="484.0" minWidth="10.0" prefWidth="247.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="743.0" minWidth="10.0" prefWidth="740.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Standarttan Sapmalar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Tarihleri" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Açıklamalar ve Ekler" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="-15.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Standard Deviations ">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Dates" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description and Attachments" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <TextField text="Standarttan sapma yoktur." GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField promptText="Zorunlu olmayan alan" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutX="-1.0" layoutY="971.0" prefHeight="44.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="13.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Muayene Sonuçları/">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="370.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inspection Results">
+                           <GridPane.margin>
+                              <Insets left="485.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="1015.0" prefHeight="660.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="13.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sıra No">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak/Parça No" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="40.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kontrol Uzun." GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kaynak Yön." GridPane.columnIndex="3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="30.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kalınlık (mm)" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="7.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Çap (mm)" GridPane.columnIndex="5">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hata Tipi" GridPane.columnIndex="6">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="30.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hatanın Yeri" GridPane.columnIndex="7">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="32.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sonuç" GridPane.columnIndex="8">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="15.0" top="-15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serial No">
+                           <GridPane.margin>
+                              <Insets left="7.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weld/ Piece No" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="47.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test Length" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="15.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welding Process" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thickness" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="15.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Diameter" GridPane.columnIndex="5">
+                           <GridPane.margin>
+                              <Insets left="18.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Defect Type" GridPane.columnIndex="6">
+                           <GridPane.margin>
+                              <Insets left="24.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Defect Loc." GridPane.columnIndex="7">
+                           <GridPane.margin>
+                              <Insets left="37.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Result" GridPane.columnIndex="8">
+                           <GridPane.margin>
+                              <Insets left="15.0" top="15.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="8" GridPane.rowIndex="8">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="9" GridPane.rowIndex="9">
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10" GridPane.rowIndex="10">
+                           <GridPane.margin>
+                              <Insets left="27.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="11" GridPane.rowIndex="11">
+                           <GridPane.margin>
+                              <Insets left="27.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="12" GridPane.rowIndex="12">
+                           <GridPane.margin>
+                              <Insets left="27.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="13" GridPane.rowIndex="13">
+                           <GridPane.margin>
+                              <Insets left="27.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="14" GridPane.rowIndex="14">
+                           <GridPane.margin>
+                              <Insets left="27.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <TextField alignment="CENTER" text="TÜRKER ATAGÜL PC" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="TÜRKER ATAGÜL PF" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="TÜRKER ATAGÜL PD" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="300" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="300" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="300" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="FCAW (136)" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="FCAW (136)" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="FCAW (136)" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="12" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="12" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" text="12" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="8" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" layoutY="1675.0" prefHeight="250.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="13.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Bilgileri / ">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Operatör / " GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="45.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Değerlendiren / " GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Onay / " GridPane.columnIndex="3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="45.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Müşteri / " GridPane.columnIndex="4">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="45.0" />
+                           </GridPane.margin></Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adı Soyadı / " GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seviye / " GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tarih / " GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="İmza / " GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person. Infor.">
+                           <GridPane.margin>
+                              <Insets left="112.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name Surname" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="77.0" top="2.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="53.0" top="2.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="47.0" top="2.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Signature" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="43.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Operator" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="108.0" top="2.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluated by" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="112.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="85.0" top="2.0" />
+                           </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="100.0" top="1.0" />
+                           </GridPane.margin>
+                        </Text>
                      </children>
                   </GridPane>
                </children>
