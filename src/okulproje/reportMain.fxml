@@ -61,6 +61,70 @@
                <HBox.margin>
                   <Insets />
                </HBox.margin></AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="47.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="120.0">
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="47.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../images/list.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-16.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="420.0">
+                     <image>
+                        <Image url="@../images/pdf.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-17.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="320.0">
+                     <image>
+                        <Image url="@../images/excel.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="43.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="520.0">
+                     <image>
+                        <Image url="@../images/remove.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-22.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="220.0">
+                     <image>
+                        <Image url="@../images/iconfinder_icon-136-document-edit_314251%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#d5dadd" layoutX="45.0" layoutY="89.265625" strokeType="OUTSIDE" strokeWidth="0.0" text="Listele" AnchorPane.topAnchor="72.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d5dadd" layoutX="56.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ekle">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d5dadd" layoutX="40.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Düzenle">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d5dadd" layoutX="48.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Excel">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d5dadd" layoutX="52.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PDF">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d5dadd" layoutX="57.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sil">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
          </children>
          <BorderPane.margin>
             <Insets />
