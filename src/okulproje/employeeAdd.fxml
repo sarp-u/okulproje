@@ -113,14 +113,58 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView layoutX="240.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TextField fx:id="nameTextField" layoutX="398.0" layoutY="132.0" />
+            <TextField fx:id="surnameTextField" layoutX="651.0" layoutY="132.0" />
+            <TextField fx:id="tcNoTextField" layoutX="399.0" layoutY="235.0" />
+            <TextField fx:id="phoneNoTextField" layoutX="399.0" layoutY="344.0" />
+            <TextField fx:id="mailTextField" layoutX="664.0" layoutY="344.0" AnchorPane.rightAnchor="230.0" />
+            <TextField fx:id="birthdayTextField" layoutX="399.0" layoutY="460.0" promptText="gg/aa/yyyy" />
+            <ImageView fitHeight="235.0" fitWidth="259.0" layoutX="67.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="80.0">
+               <image>
+                  <Image url="@../images/iconfinder_user_male4_172628.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="399.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="İsim">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="651.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Soyisim">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="399.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tc Kimlik No">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="399.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefon No">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="651.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text layoutX="399.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doğum Tarihi">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Button layoutX="700.0" layoutY="492.0" mnemonicParsing="false" onAction="#newPersonButtonPushed" text="Kayıt Et" />
+            <TableView fx:id="tableView" layoutX="6.0" layoutY="577.0" prefHeight="285.0" prefWidth="1030.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="İsim" />
+                  <TableColumn fx:id="surnameColumn" prefWidth="150.0" text="Soyisim" />
+                  <TableColumn fx:id="tcNoColumn" prefWidth="150.0" text="Tc Kimlik" />
+                  <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
+                  <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
               </columns>
             </TableView>
-            <Button layoutX="598.0" layoutY="570.0" mnemonicParsing="false" text="Ekle" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
-            <Button layoutX="614.0" layoutY="570.0" mnemonicParsing="false" text="Kayıt Et" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
          </children>
       </AnchorPane>
    </center>

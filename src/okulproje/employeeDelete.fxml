@@ -113,13 +113,17 @@
    <center>
       <AnchorPane prefHeight="606.0" prefWidth="680.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView layoutX="162.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tableView" layoutX="162.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="İsim" />
+                <TableColumn fx:id="surnameColumn" prefWidth="150.0" text="Soyisim" />
+                  <TableColumn fx:id="tcNoColumn" prefWidth="150.0" text="Tc Kimlik" />
+                  <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
+                  <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
               </columns>
             </TableView>
-            <Button layoutX="486.0" layoutY="574.0" mnemonicParsing="false" text="Sil" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
+            <Button layoutX="486.0" layoutY="574.0" mnemonicParsing="false" onAction="#deleteButtonPushed" text="Sil" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
             <Button layoutX="606.0" layoutY="570.0" mnemonicParsing="false" text="Kayıt Et" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
          </children>
       </AnchorPane>

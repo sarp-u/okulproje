@@ -113,10 +113,14 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView layoutX="212.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tableView" layoutX="212.0" layoutY="175.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="İsim" />
+                  <TableColumn fx:id="surnameColumn" prefWidth="150.0" text="Soyisim" />
+                  <TableColumn fx:id="tcNoColumn" prefWidth="150.0" text="Tc Kimlik" />
+                  <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
+                  <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
               </columns>
             </TableView>
             <Button layoutX="482.0" layoutY="574.0" mnemonicParsing="false" text="Listele" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
