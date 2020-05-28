@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -37,25 +38,60 @@ import jxl.write.WriteException;
  * @author fener
  */
 public class ReportMainController implements Initializable {
+    // TextField
+    @FXML private TextField inspecitonStandart;
+    @FXML private TextField evaluationStandart;
+    @FXML private TextField inspectionProcedure;
+    @FXML private TextField page;
+    @FXML private TextField reportNo;
+    @FXML private TextField reportDate;
+    @FXML private TextField luxMeter;
+    @FXML private TextField testMedium;
+    @FXML private TextField demagnetization;
+    @FXML private TextField drawingNo;
+    @FXML private TextField heatTreatment;
+    @FXML private TextField gaussField;
+    @FXML private TextField surfaceCondition2;
+    @FXML private TextField lightEquip;
+    @FXML private TextField liftingTestDate;
+    @FXML private TextField standardDeviations;
+    @FXML private TextField inspectionDates;
+    @FXML private TextField descriptions;
+    @FXML private TextField examinationArea;
+    @FXML private TextField weldNo;
+    @FXML private TextField testLength;
+    @FXML private TextField weldingProcess;
+    @FXML private TextField thickness;
+    @FXML private TextField diameter;
+    @FXML private TextField defectType;
+    @FXML private TextField defectLoc;
+    @FXML private TextField weldNo2;
+    @FXML private TextField testLength2;
+    @FXML private TextField weldingProcess2;
+    @FXML private TextField thickness2;
+    @FXML private TextField diameter2;
+    @FXML private TextField defectType2;
+    @FXML private TextField defectLoc2;
+    @FXML private TextField weldNo3;
+    @FXML private TextField testLength3;
+    @FXML private TextField weldingProcess3;
+    @FXML private TextField thickness3;
+    @FXML private TextField diameter3;
+    @FXML private TextField defectType3;
+    @FXML private TextField defectLoc3;
+    // ChoiceBox
     ObservableList customerList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> customer;
     ObservableList projectNameList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> projectName;
     ObservableList inspectionPlaceList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> inspectionPlace;
-    @FXML private TextField inspecitonStandart;
-    @FXML private TextField evaluationStandart;
-    @FXML private TextField inspectionProcedure;
     ObservableList inspectionScopeList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> inspectionScope;
-    @FXML private TextField drawingNo;
     ObservableList surfaceConditionList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> surfaceCondition;
     ObservableList examinationStageList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> examinationStage;
-    @FXML private TextField page;
-    @FXML private TextField reportNo;
-    @FXML private TextField reportDate;
     ObservableList jobOrderNoList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> jobOrderNo;
     ObservableList offerNoList = FXCollections.observableArrayList();
@@ -72,24 +108,25 @@ public class ReportMainController implements Initializable {
     @FXML private ChoiceBox<String> lightIntensity;
     ObservableList lightDistanceList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> lightDistance;
+    ObservableList currentTypeList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> currentType;
+    ObservableList surfaceTemperatureList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> surfaceTemperature;
+    ObservableList result1List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> res1;
+    ObservableList result2List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> res2;
+    ObservableList result3List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> res3;
+    
+    // CheckBox
+    @FXML private CheckBox buttWeld;
+    @FXML private CheckBox filletWeld;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        customerSelect();
-        projectNameSelect();
-        inspectionPlaceSelect();
-        inspectionScopeSelect();
-        surfaceConditionSelect();
-        examinationStageSelect();
-        jobOrderNoSelect();
-        offerNoSelect();
-        poleDistanceSelect();
-        equipmentSelect();
-        carrierMediumSelect();
-        magTechSelect();
-        lightIntensitySelect();
-        lightDistanceSelect();
+        startAll();
     }
 
     @FXML
@@ -157,7 +194,7 @@ public class ReportMainController implements Initializable {
         int row43 = 43;
         
 
-        File f = new File("C:\\Users\\fener\\OneDrive\\Masaüstü\\excellll2.xls");
+        File f = new File("C:\\Users\\fener\\OneDrive\\Masaüstü\\excel2.xls");
         WritableWorkbook myexel = Workbook.createWorkbook(f);
         WritableSheet mysheet = myexel.createSheet("mySheet", 0);
         mysheet.getSettings().setDefaultColumnWidth(12);
@@ -374,15 +411,16 @@ public class ReportMainController implements Initializable {
                 + "Examination Area"));
         
         mysheet.mergeCells(col7,row8,col8,row8);
-        mysheet.addCell(new Label(col7,row8,""));
+        mysheet.addCell(new Label(col7,row8, examinationArea.getText()));
         
         // Akım Tipi
         mysheet.mergeCells(col4,row9,col6,row9);
         mysheet.addCell(new Label(col4,row9,"Akım Tipi\n"
                 + "Current Type"));
         
+        String currentTypeSelected = currentType.getValue();
         mysheet.mergeCells(col7,row9,col8,row9);
-        mysheet.addCell(new Label(col7,row9,("")));
+        mysheet.addCell(new Label(col7,row9, currentTypeSelected));
         
         // Işık Şiddeti
         mysheet.mergeCells(col4,row10,col6,row10);
@@ -390,7 +428,7 @@ public class ReportMainController implements Initializable {
                 + "Luxmeter"));
         
         mysheet.mergeCells(col7,row10,col8,row10);
-        mysheet.addCell(new Label(col7,row10,""));
+        mysheet.addCell(new Label(col7,row10, luxMeter.getText()));
         
         // Muayene Ortamı
         mysheet.mergeCells(col4,row11,col6,row11);
@@ -398,7 +436,7 @@ public class ReportMainController implements Initializable {
                 + "Test Medium"));
         
         mysheet.mergeCells(col7,row11,col8,row11);
-        mysheet.addCell(new Label(col7,row11, ""));
+        mysheet.addCell(new Label(col7,row11, testMedium.getText()));
         
         // Mıknatıs Giderimi
         mysheet.mergeCells(col4,row12,col6,row12);
@@ -406,7 +444,7 @@ public class ReportMainController implements Initializable {
                 + "Demagnetization"));
         
         mysheet.mergeCells(col7,row12,col8,row12);
-        mysheet.addCell(new Label(col7,row12," "));
+        mysheet.addCell(new Label(col7,row12, demagnetization.getText()));
         
         // Isıl İşlem
         mysheet.mergeCells(col4,row13,col6,row13);
@@ -414,7 +452,7 @@ public class ReportMainController implements Initializable {
                 + "Heat Treatment"));
         
         mysheet.mergeCells(col7,row13,col8,row13);
-        mysheet.addCell(new Label(col7,row13," "));
+        mysheet.addCell(new Label(col7,row13, heatTreatment.getText()));
         
        
         
@@ -423,8 +461,9 @@ public class ReportMainController implements Initializable {
         mysheet.addCell(new Label(col9,row8,"Yüzey Sıcaklığı °C\n"
                 + "Surface Temperature"));
         
+        String surfaceTemperatureSelected = surfaceTemperature.getValue();
         mysheet.mergeCells(col11,row8,col13,row8);
-        mysheet.addCell(new Label(col11,row8,""));
+        mysheet.addCell(new Label(col11,row8, surfaceTemperatureSelected));
         
         
         // Alan Şiddeti
@@ -434,7 +473,7 @@ public class ReportMainController implements Initializable {
                 + "      Gauss Field Strength"));
         
         mysheet.mergeCells(col11,row9,col13,row10);
-        mysheet.addCell(new Label(col11,row9,("")));
+        mysheet.addCell(new Label(col11,row9, gaussField.getText()));
         
         // Yüzey
         mysheet.mergeCells(col9,row11,col10,row11);
@@ -442,7 +481,7 @@ public class ReportMainController implements Initializable {
                 + "Surface Condition"));
         
         mysheet.mergeCells(col11,row11,col13,row11);
-        mysheet.addCell(new Label(col11,row11,""));
+        mysheet.addCell(new Label(col11,row11, surfaceCondition2.getText()));
         
         // Işık Cihazı
         mysheet.mergeCells(col9,row12,col10,row12);
@@ -450,7 +489,7 @@ public class ReportMainController implements Initializable {
                 + "Identification of Light Equip."));
         
         mysheet.mergeCells(col11,row12,col13,row12);
-        mysheet.addCell(new Label(col11,row12, " "));
+        mysheet.addCell(new Label(col11,row12, lightEquip.getText()));
         
         // Kaldırma Testi
         mysheet.mergeCells(col9,row13,col10,row13);
@@ -458,7 +497,7 @@ public class ReportMainController implements Initializable {
                 + "Lifting Test Date/ Number"));
         
         mysheet.mergeCells(col11,row13,col13,row13);
-        mysheet.addCell(new Label(col11,row13,""));
+        mysheet.addCell(new Label(col11,row13, liftingTestDate.getText()));
         
         // Resimler
         mysheet.mergeCells(col0,row14,col3,row18);
@@ -474,6 +513,23 @@ public class ReportMainController implements Initializable {
         ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
         ImageIO.write(input2, "PNG", baos2);
         mysheet.addImage(new WritableImage(4,14,3.75,4.75, baos2.toByteArray()));
+        
+
+        if(buttWeld.isSelected()){
+            java.io.File imageFile3 = new java.io.File("C:\\Users\\fener\\OneDrive\\Belgeler\\NetBeansProjects\\okulproje\\src\\images\\tik.png");
+            BufferedImage input3 = ImageIO.read(imageFile3);
+            ByteArrayOutputStream baos3 = new ByteArrayOutputStream();
+            ImageIO.write(input3, "PNG", baos3);
+            mysheet.addImage(new WritableImage(3,18,0.5,0.5, baos3.toByteArray()));
+        }
+        if(filletWeld.isSelected()){
+            java.io.File imageFile3 = new java.io.File("C:\\Users\\fener\\OneDrive\\Belgeler\\NetBeansProjects\\okulproje\\src\\images\\tik.png");
+            BufferedImage input3 = ImageIO.read(imageFile3);
+            ByteArrayOutputStream baos3 = new ByteArrayOutputStream();
+            ImageIO.write(input3, "PNG", baos3);
+            mysheet.addImage(new WritableImage(7,18,0.5,0.5, baos3.toByteArray()));
+        }
+
         
         // Süreksizlik
         mysheet.mergeCells(col8,row14,col13,row14);
@@ -506,7 +562,7 @@ public class ReportMainController implements Initializable {
                 + "Standard Deviations"));
         
         mysheet.mergeCells(col4,row19,col13,row19);
-        mysheet.addCell(new Label(col4,row19,""));
+        mysheet.addCell(new Label(col4,row19, standardDeviations.getText()));
         
         // Muayene Tarihleri
         mysheet.mergeCells(col0,row20,col3,row20);
@@ -514,7 +570,7 @@ public class ReportMainController implements Initializable {
                 + "Inspection Dates"));
         
         mysheet.mergeCells(col4,row20,col13,row20);
-        mysheet.addCell(new Label(col4,row20,""));
+        mysheet.addCell(new Label(col4,row20, inspectionDates.getText()));
         
         //Açıklamalar ve Ekler
         mysheet.mergeCells(col0,row21,col3,row21);
@@ -522,7 +578,7 @@ public class ReportMainController implements Initializable {
                 + "Description and Attachments"));
         
         mysheet.mergeCells(col4,row21,col13,row21);
-        mysheet.addCell(new Label(col4,row21," "));
+        mysheet.addCell(new Label(col4,row21, descriptions.getText()));
         
         // Muayene Sonuçları
         mysheet.mergeCells(col0,row22,col13,row22);
@@ -560,59 +616,62 @@ public class ReportMainController implements Initializable {
         mysheet.mergeCells(col0,row24,col0,row24);
         mysheet.addCell(new Label(col0,row24,"1"));
         mysheet.mergeCells(col1,row24,col3,row24);
-        mysheet.addCell(new Label(col1,row24,""));
+        mysheet.addCell(new Label(col1,row24, weldNo.getText()));
         mysheet.mergeCells(col4,row24,col4,row24);
-        mysheet.addCell(new Label(col4,row24,""));
+        mysheet.addCell(new Label(col4,row24,testLength.getText()));
         mysheet.mergeCells(col5,row24,col6,row24);
-        mysheet.addCell(new Label(col5,row24,""));
+        mysheet.addCell(new Label(col5,row24,weldingProcess.getText()));
         mysheet.mergeCells(col7,row24,col8,row24);
-        mysheet.addCell(new Label(col7,row24,""));
+        mysheet.addCell(new Label(col7,row24,thickness.getText()));
         mysheet.mergeCells(col9,row24,col9,row24);
-        mysheet.addCell(new Label(col9,row24,""));
+        mysheet.addCell(new Label(col9,row24,diameter.getText()));
         mysheet.mergeCells(col10,row24,col10,row24);
-        mysheet.addCell(new Label(col10,row24,""));
+        mysheet.addCell(new Label(col10,row24,defectType.getText()));
         mysheet.mergeCells(col11,row24,col12,row24);
-        mysheet.addCell(new Label(col11,row24,""));
+        mysheet.addCell(new Label(col11,row24,defectLoc.getText()));
         mysheet.mergeCells(col13,row24,col13,row24);
-        mysheet.addCell(new Label(col13,row24,""));
+        String result1Selected = res1.getValue();
+        mysheet.addCell(new Label(col13,row24, result1Selected));
         
         mysheet.mergeCells(col0,row25,col0,row25);
         mysheet.addCell(new Label(col0,row25,"2"));
         mysheet.mergeCells(col1,row25,col3,row25);
-        mysheet.addCell(new Label(col1,row25,""));
+        mysheet.addCell(new Label(col1,row25, weldNo2.getText()));
         mysheet.mergeCells(col4,row25,col4,row25);
-        mysheet.addCell(new Label(col4,row25,""));
+        mysheet.addCell(new Label(col4,row25,testLength2.getText()));
         mysheet.mergeCells(col5,row25,col6,row25);
-        mysheet.addCell(new Label(col5,row25,""));
+        mysheet.addCell(new Label(col5,row25, weldingProcess2.getText()));
         mysheet.mergeCells(col7,row25,col8,row25);
-        mysheet.addCell(new Label(col7,row25,""));
+        mysheet.addCell(new Label(col7,row25, thickness2.getText()));
         mysheet.mergeCells(col9,row25,col9,row25);
-        mysheet.addCell(new Label(col9,row25,""));
+        mysheet.addCell(new Label(col9,row25,diameter2.getText()));
         mysheet.mergeCells(col10,row25,col10,row25);
-        mysheet.addCell(new Label(col10,row25,""));
+        mysheet.addCell(new Label(col10,row25,defectType2.getText()));
         mysheet.mergeCells(col11,row25,col12,row25);
-        mysheet.addCell(new Label(col11,row25,""));
+        mysheet.addCell(new Label(col11,row25,defectLoc2.getText()));
         mysheet.mergeCells(col13,row25,col13,row25);
-        mysheet.addCell(new Label(col13,row25,""));
+        String result2Selected = res2.getValue();
+        mysheet.addCell(new Label(col13,row25,result2Selected));
         
         mysheet.mergeCells(col0,row26,col0,row26);
         mysheet.addCell(new Label(col0,row26,"3"));
         mysheet.mergeCells(col1,row26,col3,row26);
-        mysheet.addCell(new Label(col1,row26,""));
+        mysheet.addCell(new Label(col1,row26,weldNo3.getText()));
         mysheet.mergeCells(col4,row26,col4,row26);
-        mysheet.addCell(new Label(col4,row26,""));
+        mysheet.addCell(new Label(col4,row26,testLength3.getText()));
         mysheet.mergeCells(col5,row26,col6,row26);
-        mysheet.addCell(new Label(col5,row26,""));
+        mysheet.addCell(new Label(col5,row26,weldingProcess3.getText()));
         mysheet.mergeCells(col7,row26,col8,row26);
-        mysheet.addCell(new Label(col7,row26,""));
+        mysheet.addCell(new Label(col7,row26,thickness3.getText()));
         mysheet.mergeCells(col9,row26,col9,row26);
-        mysheet.addCell(new Label(col9,row26,""));
+        mysheet.addCell(new Label(col9,row26,diameter3.getText()));
         mysheet.mergeCells(col10,row26,col10,row26);
-        mysheet.addCell(new Label(col10,row26,""));
+        mysheet.addCell(new Label(col10,row26,defectType3.getText()));
         mysheet.mergeCells(col11,row26,col12,row26);
-        mysheet.addCell(new Label(col11,row26,""));
+        mysheet.addCell(new Label(col11,row26,defectLoc3.getText()));
         mysheet.mergeCells(col13,row26,col13,row26);
-        mysheet.addCell(new Label(col13,row26,""));
+        String result3Selected = res3.getValue();
+        mysheet.addCell(new Label(col13,row26,result3Selected));
         
         mysheet.mergeCells(col0,row27,col0,row27);
         mysheet.addCell(new Label(col0,row27,"4"));
@@ -956,9 +1015,9 @@ public class ReportMainController implements Initializable {
     private void surfaceConditionSelect(){
         surfaceConditionList.removeAll(surfaceConditionList);
         String surfaceCondition1 = "After Welding";
-        String surfaceCondition2= "Welding";
+        String surfaceCondition22= "Welding";
         String surfaceCondition3 = "Before Welding";
-        surfaceConditionList.addAll(surfaceCondition1, surfaceCondition2, surfaceCondition3);
+        surfaceConditionList.addAll(surfaceCondition1, surfaceCondition22, surfaceCondition3);
         surfaceCondition.getItems().addAll(surfaceConditionList);
     }
     
@@ -1041,4 +1100,69 @@ public class ReportMainController implements Initializable {
         lightDistanceList.addAll(lightDistance1, lightDistance2, lightDistance3);
         lightDistance.getItems().addAll(lightDistanceList);
     }
+    
+    private void currentTypeSelect(){
+        currentTypeList.removeAll(currentTypeList);
+        String currentType1 = "AC";
+        String currentType2 = "DC";
+        currentTypeList.addAll(currentType1, currentType2);
+        currentType.getItems().addAll(currentTypeList);
+    }
+    
+    private void surfaceTemperatureSelect(){
+        surfaceTemperatureList.removeAll(surfaceTemperatureList);
+        String surfaceTemperature1 = "15°C";
+        String surfaceTemperature2 = "20°C";
+        String surfaceTemperature3 = "25°C";
+        surfaceTemperatureList.addAll(surfaceTemperature1, surfaceTemperature2, surfaceTemperature3);
+        surfaceTemperature.getItems().addAll(surfaceTemperatureList);
+    }
+    
+    private void result1Select(){
+        result1List.removeAll(result1List);
+        String resu1t11 = "OK";
+        String resu1t12 = "RED";
+        result1List.addAll(resu1t11, resu1t12);
+        res1.getItems().addAll(result1List);
+    }
+    
+    private void result2Select(){
+        result2List.removeAll(result2List);
+        String result21 = "OK";
+        String resu1t22 = "RED";
+        result2List.addAll(result21, resu1t22);
+        res2.getItems().addAll(result2List);
+    }
+    
+    private void result3Select(){
+        result3List.removeAll(result3List);
+        String result31 = "OK";
+        String result32 = "RED";
+        result3List.addAll(result31, result32);
+        res3.getItems().addAll(result3List);
+    }
+    
+    public void startAll(){
+        customerSelect();
+        projectNameSelect();
+        inspectionPlaceSelect();
+        inspectionScopeSelect();
+        surfaceConditionSelect();
+        examinationStageSelect();
+        jobOrderNoSelect();
+        offerNoSelect();
+        poleDistanceSelect();
+        equipmentSelect();
+        carrierMediumSelect();
+        magTechSelect();
+        lightIntensitySelect();
+        lightDistanceSelect();
+        currentTypeSelect();
+        surfaceTemperatureSelect();
+        result1Select();
+        result2Select();
+        result3Select();
+    }
+    
+    
 }
