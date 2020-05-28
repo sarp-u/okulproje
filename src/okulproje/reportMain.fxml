@@ -386,27 +386,22 @@
                               <Insets left="5.0" top="15.0" />
                            </GridPane.margin>
                         </Text>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1">
+                        <ChoiceBox fx:id="projectName" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="45.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                           <GridPane.margin>
-                              <Insets left="45.0" />
-                           </GridPane.margin>
-                        </ChoiceBox>
-                        <TextField alignment="CENTER" prefHeight="25.0" prefWidth="170.0" text="TS EN ISO 17638" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <TextField fx:id="inspecitonStandart" alignment="CENTER" prefHeight="25.0" prefWidth="170.0" text="TS EN ISO 17638" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="45.0" right="45.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField alignment="CENTER" text="TS EN ISO 23278 Class B" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <TextField fx:id="evaluationStandart" alignment="CENTER" text="TS EN ISO 23278 Class B" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="45.0" right="45.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField alignment="CENTER" text="P-101-004" GridPane.columnIndex="3">
+                        <TextField fx:id="inspectionProcedure" alignment="CENTER" text="P-101-004" GridPane.columnIndex="3">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -414,41 +409,61 @@
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="inspectionScope" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <TextField alignment="CENTER" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <TextField fx:id="drawingNo" alignment="CENTER" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <ChoiceBox fx:id="surfaceCondition" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                        <ChoiceBox fx:id="examinationStage" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <TextField alignment="CENTER" text="1" GridPane.columnIndex="5">
+                        <TextField fx:id="page" alignment="CENTER" text="1" GridPane.columnIndex="5">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                        <ChoiceBox fx:id="jobOrderNo" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                        <ChoiceBox fx:id="offerNo" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
+                        <ChoiceBox fx:id="customer" prefWidth="150.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="45.0" right="45.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="inspectionPlace" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="45.0" right="45.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField fx:id="reportNo" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="reportDate" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
                      </children>
                   </GridPane>
                   <GridPane gridLinesVisible="true" layoutY="325.0" prefWidth="982.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -676,6 +691,36 @@
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
+                        <ChoiceBox fx:id="poleDistance" prefWidth="150.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="equipment" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="carrierMedium" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="magTech" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="lightIntensity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="lightDistance" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
                      </children>
                   </GridPane>
                   <GridPane gridLinesVisible="true" layoutX="657.0" layoutY="355.0" prefHeight="264.0" prefWidth="322.0" AnchorPane.leftAnchor="657.0" AnchorPane.rightAnchor="0.0">
@@ -776,6 +821,11 @@
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
                      </children>
                   </GridPane>
                   <GridPane gridLinesVisible="true" layoutX="493.0" layoutY="619.0" prefHeight="44.0" prefWidth="486.0" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="0.0">
@@ -986,6 +1036,11 @@
                            </GridPane.margin>
                         </TextField>
                         <TextField promptText="Zorunlu olmayan alan" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
@@ -1307,6 +1362,51 @@
                               <Insets left="5.0" right="5.0" />
                            </GridPane.margin>
                         </ChoiceBox>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="7" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="7" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
                      </children>
                   </GridPane>
                   <GridPane gridLinesVisible="true" layoutY="1675.0" prefHeight="250.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0">
@@ -1441,6 +1541,66 @@
                               <Insets left="100.0" top="1.0" />
                            </GridPane.margin>
                         </Text>
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                        </TextField>
                      </children>
                   </GridPane>
                </children>

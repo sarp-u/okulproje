@@ -11,12 +11,16 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -33,12 +37,59 @@ import jxl.write.WriteException;
  * @author fener
  */
 public class ReportMainController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
+    ObservableList customerList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> customer;
+    ObservableList projectNameList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> projectName;
+    ObservableList inspectionPlaceList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> inspectionPlace;
+    @FXML private TextField inspecitonStandart;
+    @FXML private TextField evaluationStandart;
+    @FXML private TextField inspectionProcedure;
+    ObservableList inspectionScopeList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> inspectionScope;
+    @FXML private TextField drawingNo;
+    ObservableList surfaceConditionList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> surfaceCondition;
+    ObservableList examinationStageList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> examinationStage;
+    @FXML private TextField page;
+    @FXML private TextField reportNo;
+    @FXML private TextField reportDate;
+    ObservableList jobOrderNoList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> jobOrderNo;
+    ObservableList offerNoList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> offerNo;
+    ObservableList poleDistanceList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> poleDistance;
+    ObservableList equipmentList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> equipment;
+    ObservableList carrierMediumList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> carrierMedium;
+    ObservableList magTechList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> magTech;
+    ObservableList lightIntensityList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> lightIntensity;
+    ObservableList lightDistanceList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> lightDistance;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        customerSelect();
+        projectNameSelect();
+        inspectionPlaceSelect();
+        inspectionScopeSelect();
+        surfaceConditionSelect();
+        examinationStageSelect();
+        jobOrderNoSelect();
+        offerNoSelect();
+        poleDistanceSelect();
+        equipmentSelect();
+        carrierMediumSelect();
+        magTechSelect();
+        lightIntensitySelect();
+        lightDistanceSelect();
     }
 
     @FXML
@@ -106,7 +157,7 @@ public class ReportMainController implements Initializable {
         int row43 = 43;
         
 
-        File f = new File("C:\\Users\\fener\\OneDrive\\Masaüstü\\excel2.xls");
+        File f = new File("C:\\Users\\fener\\OneDrive\\Masaüstü\\excellll2.xls");
         WritableWorkbook myexel = Workbook.createWorkbook(f);
         WritableSheet mysheet = myexel.createSheet("mySheet", 0);
         mysheet.getSettings().setDefaultColumnWidth(12);
@@ -135,24 +186,27 @@ public class ReportMainController implements Initializable {
         mysheet.addCell(new Label(col0,row2,"Müşteri\n"
         + "Customer"));
         
+        String customerSelected = customer.getValue();
         mysheet.mergeCells(col2,row2,col4,row2);
-        mysheet.addCell(new Label(col2,row2,""));
+        mysheet.addCell(new Label(col2,row2, customerSelected));
         
         // Proje
         mysheet.mergeCells(col0,row3,col1,row3);
         mysheet.addCell(new Label(col0,row3,"Proje Adı\n"
         + "Project Name"));
         
+        String projectNameSelected = projectName.getValue();
         mysheet.mergeCells(col2,row3,col4,row3);
-        mysheet.addCell(new Label(col2,row3,""));
+        mysheet.addCell(new Label(col2,row3, projectNameSelected));
         
         // Test
         mysheet.mergeCells(col0,row4,col1,row4);
         mysheet.addCell(new Label(col0,row4,"Test Yeri\n"
         + "Inspection Place"));
         
+        String inspectionPlaceSelected = inspectionPlace.getValue();
         mysheet.mergeCells(col2,row4,col4,row4);
-        mysheet.addCell(new Label(col2,row4,""));
+        mysheet.addCell(new Label(col2,row4, inspectionPlaceSelected));
         
         // Muayene
         mysheet.mergeCells(col0,row5,col1,row5);
@@ -160,7 +214,7 @@ public class ReportMainController implements Initializable {
         + "Inspection Standart"));
         
         mysheet.mergeCells(col2,row5,col4,row5);
-        mysheet.addCell(new Label(col2,row5,""));
+        mysheet.addCell(new Label(col2,row5, inspecitonStandart.getText()));
         
         //  Değerlendirme
         mysheet.mergeCells(col0,row6,col1,row6);
@@ -168,7 +222,7 @@ public class ReportMainController implements Initializable {
         + "Evaluation Standart"));
         
         mysheet.mergeCells(col2,row6,col4,row6);
-        mysheet.addCell(new Label(col2,row6,""));
+        mysheet.addCell(new Label(col2,row6, evaluationStandart.getText()));
         
         // Muayene Prosedürü
         mysheet.mergeCells(col5,row2,col7,row2);
@@ -176,15 +230,16 @@ public class ReportMainController implements Initializable {
         + "Inspection Procedure"));
         
         mysheet.mergeCells(col8,row2,col9,row2);
-        mysheet.addCell(new Label(col8,row2,""));
+        mysheet.addCell(new Label(col8,row2, inspectionProcedure.getText()));
         
         // Muayene Kapsamı
         mysheet.mergeCells(col5,row3,col7,row3);
         mysheet.addCell(new Label(col5,row3,"Muayene Kapsamı\n"
         + "Inspection Scope"));
         
+        String inspectionScopeSelected = inspectionScope.getValue();
         mysheet.mergeCells(col8,row3,col9,row3);
-        mysheet.addCell(new Label(col8,row3,""));
+        mysheet.addCell(new Label(col8,row3, inspectionScopeSelected));
         
         // Resim No
         mysheet.mergeCells(col5,row4,col7,row4);
@@ -192,23 +247,25 @@ public class ReportMainController implements Initializable {
         + "Drawing No"));
         
         mysheet.mergeCells(col8,row4,col9,row4);
-        mysheet.addCell(new Label(col8,row4,""));
+        mysheet.addCell(new Label(col8,row4, drawingNo.getText()));
         
         // Yüzey Durumu
         mysheet.mergeCells(col5,row5,col7,row5);
         mysheet.addCell(new Label(col5,row5,"Yüzey Durumu\n"
         + "Surface Condition"));
         
+        String surfaceConditionSelected = surfaceCondition.getValue();
         mysheet.mergeCells(col8,row5,col9,row5);
-        mysheet.addCell(new Label(col8,row5,""));
+        mysheet.addCell(new Label(col8,row5, surfaceConditionSelected));
         
         // Muayene Aşaması
         mysheet.mergeCells(col5,row6,col7,row6);
         mysheet.addCell(new Label(col5,row6,"Muayene Aşaması\n"
         + "State of Examination"));
         
+        String examinationStageSelected = examinationStage.getValue();
         mysheet.mergeCells(col8,row6,col9,row6);
-        mysheet.addCell(new Label(col8,row6,""));
+        mysheet.addCell(new Label(col8,row6, examinationStageSelected));
         
         // Sayfa No
         mysheet.mergeCells(col10,row2,col11,row2);
@@ -216,7 +273,7 @@ public class ReportMainController implements Initializable {
         +"Page"));
         
         mysheet.mergeCells(col12,row2,col13,row2);
-        mysheet.addCell(new Label(col12,row2,""));
+        mysheet.addCell(new Label(col12,row2, page.getText()));
         
         // Rapor No
         mysheet.mergeCells(col10,row3,col11,row3);
@@ -224,7 +281,7 @@ public class ReportMainController implements Initializable {
         + "Report No"));
         
         mysheet.mergeCells(col12,row3,col13,row3);
-        mysheet.addCell(new Label(col12,row3,""));
+        mysheet.addCell(new Label(col12,row3, reportNo.getText()));
         
         // Rapor Tarihi
         mysheet.mergeCells(col10,row4,col11,row4);
@@ -232,23 +289,25 @@ public class ReportMainController implements Initializable {
         + "Report Date"));
         
         mysheet.mergeCells(col12,row4,col13,row4);
-        mysheet.addCell(new Label(col12,row4,""));
+        mysheet.addCell(new Label(col12,row4, reportDate.getText()));
         
         // İş Emri No
         mysheet.mergeCells(col10,row5,col11,row5);
         mysheet.addCell(new Label(col10,row5,"İş Emri No\n"
         + "Job Order No"));
         
+        String jobOrderNoSelected = jobOrderNo.getValue();
         mysheet.mergeCells(col12,row5,col13,row5);
-        mysheet.addCell(new Label(col12,row5,""));
+        mysheet.addCell(new Label(col12,row5, jobOrderNoSelected));
         
         // Teklif No
         mysheet.mergeCells(col10,row6,col11,row6);
         mysheet.addCell(new Label(col10,row6,"Teklif No\n"
         + "Offer No"));
         
+        String offerNoSelected = offerNo.getValue();
         mysheet.mergeCells(col12,row6,col13,row6);
-        mysheet.addCell(new Label(col12,row6,""));
+        mysheet.addCell(new Label(col12,row6, offerNoSelected));
         
         // Ekipman Bilgileri
         mysheet.mergeCells(col0,row7,col13,row7);
@@ -260,48 +319,54 @@ public class ReportMainController implements Initializable {
         mysheet.addCell(new Label(col0,row8,"Kutup Mesafesi, mm\n"
                 + "Pole Distance"));
         
+        String poleDistanceSelected = poleDistance.getValue();
         mysheet.mergeCells(col2,row8,col3,row8);
-        mysheet.addCell(new Label(col2,row8,""));
+        mysheet.addCell(new Label(col2,row8, poleDistanceSelected));
         
         // Cihaz
         mysheet.mergeCells(col0,row9,col1,row9);
         mysheet.addCell(new Label(col0,row9,"Cihaz\n"
                 + "Equipment"));
         
+        String equipmentSelected = equipment.getValue();
         mysheet.mergeCells(col2,row9,col3,row9);
-        mysheet.addCell(new Label(col2,row9,("")));
+        mysheet.addCell(new Label(col2,row9, equipmentSelected));
         
         // MP Taşıyıcı
         mysheet.mergeCells(col0,row10,col1,row10);
         mysheet.addCell(new Label(col0,row10,"Mp Taşıyıcı Ortam\n"
                 + "MP Carrier Medium"));
         
+        String carrierMediumSelected = carrierMedium.getValue();
         mysheet.mergeCells(col2,row10,col3,row10);
-        mysheet.addCell(new Label(col2,row10,""));
+        mysheet.addCell(new Label(col2,row10, carrierMediumSelected));
         
         // Mıknatıslama Tekniği
         mysheet.mergeCells(col0,row11,col1,row11);
         mysheet.addCell(new Label(col0,row11,"Mıknatıslama Tekniği\n"
                 + "Meg. Tech."));
         
+        String magTechSelected = magTech.getValue();
         mysheet.mergeCells(col2,row11,col3,row11);
-        mysheet.addCell(new Label(col2,row11, " "));
+        mysheet.addCell(new Label(col2,row11, magTechSelected));
         
         // UV Işık
         mysheet.mergeCells(col0,row12,col1,row12);
         mysheet.addCell(new Label(col0,row12,"UV Işık Şiddeti\n"
                 + "UV Light Intensity"));
         
+        String lightIntensitySelected = lightIntensity.getValue();
         mysheet.mergeCells(col2,row12,col3,row12);
-        mysheet.addCell(new Label(col2,row12,""));
+        mysheet.addCell(new Label(col2,row12, lightIntensitySelected));
         
         // Işık Mesafesi
         mysheet.mergeCells(col0,row13,col1,row13);
         mysheet.addCell(new Label(col0,row13,"Işık Mesafesi\n"
                 + "Distance of Light"));
         
+        String lightDistanceSelected = lightDistance.getValue();
         mysheet.mergeCells(col2,row13,col3,row13);
-        mysheet.addCell(new Label(col2,row13,""));
+        mysheet.addCell(new Label(col2,row13, lightDistanceSelected));
         
         // Muayene Bölgesi
         mysheet.mergeCells(col4,row8,col6,row8);
@@ -333,7 +398,7 @@ public class ReportMainController implements Initializable {
                 + "Test Medium"));
         
         mysheet.mergeCells(col7,row11,col8,row11);
-        mysheet.addCell(new Label(col7,row11, " "));
+        mysheet.addCell(new Label(col7,row11, ""));
         
         // Mıknatıs Giderimi
         mysheet.mergeCells(col4,row12,col6,row12);
@@ -847,5 +912,133 @@ public class ReportMainController implements Initializable {
     private void handleClose(MouseEvent event) {
         System.exit(0);
     }
+
+    private void customerSelect(){
+        customerList.removeAll(customerList);
+        String customer1 = "SARP GEMİ";
+        String customer2 = "AKSU GEMİ";
+        String customer3 = "YESİLDAL GEMİ";
+        String customer4 = "YILDIZ GEMİ";
+        customerList.addAll(customer1, customer2, customer3, customer4);
+        customer.getItems().addAll(customerList);
+    }
     
+    private void projectNameSelect(){
+        projectNameList.removeAll(projectNameList);
+        String projectName1 = "KAYNAKÇI TESTİ";
+        String projectName2 = "LEHİMCİ TESTİ";
+        String projectName3 = "KESİCİ TESTİ";
+        projectNameList.addAll(projectName1, projectName2, projectName3);
+        projectName.getItems().addAll(projectNameList);
+    }
+    
+    private void inspectionPlaceSelect(){
+        inspectionPlaceList.removeAll(inspectionPlaceList);
+        String inspectionPlace1 = "İZMİT";
+        String inspectionPlace2 = "İSTANBUL";
+        String inspectionPlace3 = "BALIKESİR";
+        inspectionPlaceList.addAll(inspectionPlace1, inspectionPlace2, inspectionPlace3);
+        inspectionPlace.getItems().addAll(inspectionPlaceList);
+    }
+    
+     private void inspectionScopeSelect(){
+        inspectionScopeList.removeAll(inspectionScopeList);
+        String inspectionScope1 = "100%";
+        String inspectionScope2 = "80%";
+        String inspectionScope3 = "60%";
+        String inspectionScope4 = "40%";
+        String inspectionScope5 = "20%";
+        String inspectionScope6 = "0%";
+        inspectionScopeList.addAll(inspectionScope1, inspectionScope2, inspectionScope3, inspectionScope4, inspectionScope5, inspectionScope6);
+        inspectionScope.getItems().addAll(inspectionScopeList);
+    }
+     
+    private void surfaceConditionSelect(){
+        surfaceConditionList.removeAll(surfaceConditionList);
+        String surfaceCondition1 = "After Welding";
+        String surfaceCondition2= "Welding";
+        String surfaceCondition3 = "Before Welding";
+        surfaceConditionList.addAll(surfaceCondition1, surfaceCondition2, surfaceCondition3);
+        surfaceCondition.getItems().addAll(surfaceConditionList);
+    }
+    
+    private void examinationStageSelect(){
+        examinationStageList.removeAll(examinationStageList);
+        String examinationStage1 = "Untreated";
+        String examinationStage2= "Treadted";
+        examinationStageList.addAll(examinationStage1, examinationStage2);
+        examinationStage.getItems().addAll(examinationStageList);
+    }
+    
+    private void jobOrderNoSelect(){
+        jobOrderNoList.removeAll(jobOrderNoList);
+        String jobOrderNo1 = "2604";
+        String jobOrderNo2 = "2605";
+        String jobOrderNo3 = "2606";
+        jobOrderNoList.addAll(jobOrderNo1, jobOrderNo2, jobOrderNo3);
+        jobOrderNo.getItems().addAll(jobOrderNoList);
+    }
+    
+    private void offerNoSelect(){
+        offerNoList.removeAll(offerNoList);
+        String offerOrder1 = "330-2018";
+        String offerOrder2 = "330-2019";
+        String offerOrder3 = "330-2020";
+        offerNoList.addAll(offerOrder1, offerOrder2, offerOrder3);
+        offerNo.getItems().addAll(offerNoList);
+    }
+    
+    private void poleDistanceSelect(){
+        poleDistanceList.removeAll(poleDistanceList);
+        String poleDistance1 = "100 mm";
+        String poleDistance2 = "200 mm";
+        String poleDistance3 = "300 mm";
+        poleDistanceList.addAll(poleDistance1, poleDistance2, poleDistance3);
+        poleDistance.getItems().addAll(poleDistanceList);
+    }
+    
+    private void equipmentSelect(){
+        equipmentList.removeAll(equipmentList);
+        String equipment1 = "NAWOO Sn:1701020";
+        String equipment2 = "KAKOO Sn:1953542";
+        String equipment3 = "SASOO Sn:9518423";
+        equipmentList.addAll(equipment1, equipment2, equipment3);
+        equipment.getItems().addAll(equipmentList);
+    }
+    
+    private void carrierMediumSelect(){
+        carrierMediumList.removeAll(carrierMediumList);
+        String carrierMedium1 = "BT10 LOT:B036P01";
+        String carrierMedium2 = "BT20 LOT:B036P01";
+        String carrierMedium3 = "BT30 LOT:B036P01";
+        carrierMediumList.addAll(carrierMedium1, carrierMedium2, carrierMedium3);
+        carrierMedium.getItems().addAll(carrierMediumList);
+    }
+    
+    private void magTechSelect(){
+        magTechList.removeAll(magTechList);
+        String magTech1 = "Teknik 10";
+        String magTech2 = "Teknik 80";
+        String magTech3 = "Teknik 130";
+        magTechList.addAll(magTech1, magTech2, magTech3);
+        magTech.getItems().addAll(magTechList);
+    }
+    
+    private void lightIntensitySelect(){
+        lightIntensityList.removeAll(lightIntensityList);
+        String lightIntensity1 = "W/m2";
+        String lightIntensity2 = "W/sr";
+        String lightIntensity3 = "lm/sr";
+        lightIntensityList.addAll(lightIntensity1, lightIntensity2, lightIntensity3);
+        lightIntensity.getItems().addAll(lightIntensityList);
+    }
+    
+    private void lightDistanceSelect(){
+        lightDistanceList.removeAll(lightDistanceList);
+        String lightDistance1 = "mm";
+        String lightDistance2 = "cm";
+        String lightDistance3 = "dm";
+        lightDistanceList.addAll(lightDistance1, lightDistance2, lightDistance3);
+        lightDistance.getItems().addAll(lightDistanceList);
+    }
 }
