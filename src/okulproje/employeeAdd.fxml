@@ -163,6 +163,7 @@
                   <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
                   <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
                   <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
+                  <TableColumn fx:id="levelColumn" prefWidth="129.0" text="Seviye" />
               </columns>
             </TableView>
             <TextField fx:id="levelTextField" layoutX="646.0" layoutY="235.0" />

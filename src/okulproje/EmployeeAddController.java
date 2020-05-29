@@ -7,7 +7,13 @@ package okulproje;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -37,6 +43,7 @@ public class EmployeeAddController implements Initializable {
     @FXML private TableColumn<employeeManagement, String> phoneNoColumn;
     @FXML private TableColumn<employeeManagement, String> mailColumn;
     @FXML private TableColumn<employeeManagement, String> birthdayColumn;
+    @FXML private TableColumn<employeeManagement, String> levelColumn;
     
     @FXML private TextField nameTextField;
     @FXML private TextField surnameTextField;
@@ -46,38 +53,37 @@ public class EmployeeAddController implements Initializable {
     @FXML private TextField birthdayTextField;
     @FXML private TextField levelTextField;
     
+    private ObservableList<employeeManagement> data;
+    private dataBase dc;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
-        surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
-        tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
-        phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
-        mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
-        
-        //tableView.setItems(getEmployees());
+        try {
+            dc = new dataBase();
+            Connection conn = dc.Connect();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = conn.createStatement().executeQuery("select * from employees");
+            while (rs.next()){
+                data.add(new employeeManagement(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+            }
+            nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
+            surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
+            tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
+            phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
+            mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
+            birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
+            levelColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("level"));
+            
+            tableView.setItems(null);
+            tableView.setItems(data);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EmployeeAddController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(EmployeeAddController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
-    /*public ObservableList<employeeManagement> getEmployees(){
-        ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
-        employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
-        employee.add(new employeeManagement("Aysu","Aksu","38425","0543","e1705","13.12"));
-        employee.add(new employeeManagement("Umut","Yesildal","12345","0512","e1705","11.01"));
-        return employee;
-    }
-    
-    public void newPersonButtonPushed(){
-        employeeManagement newemployee = new employeeManagement(nameTextField.getText(),
-                                                                surnameTextField.getText(),
-                                                                tcNoTextField.getText(),
-                                                                phoneNoTextField.getText(),
-                                                                mailTextField.getText(),
-                                                                birthdayTextField.getText());
-        
-        tableView.getItems().add(newemployee);
-    }
-    */
+
     @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));
@@ -142,7 +148,6 @@ public class EmployeeAddController implements Initializable {
     private void handleClose(MouseEvent event) {
         System.exit(0);
     }
-    
-    
+
     
 }
