@@ -47,7 +47,7 @@ public class EmployeeDeleteController implements Initializable {
         mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
         
-        tableView.setItems(getEmployees());
+        //tableView.setItems(getEmployees());
         
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
@@ -62,7 +62,7 @@ public class EmployeeDeleteController implements Initializable {
             allPeople.remove(employee);
         }
     }
-    
+    /*
     public ObservableList<employeeManagement> getEmployees(){
         ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
         employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
@@ -80,7 +80,7 @@ public class EmployeeDeleteController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
+    */
        @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));

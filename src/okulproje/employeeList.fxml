@@ -121,10 +121,10 @@
                   <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
                   <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
                   <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
+                  <TableColumn fx:id="levelColumn" prefWidth="129.0" text="Seviye" />
               </columns>
             </TableView>
-            <Button layoutX="482.0" layoutY="574.0" mnemonicParsing="false" text="Listele" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="100.0" />
-            <Button layoutX="571.0" layoutY="574.0" mnemonicParsing="false" text="Kayıt Et" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
+            <Button layoutX="482.0" layoutY="574.0" mnemonicParsing="false" onAction="#loadDataFromDataBase" text="Listele" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
          </children>
       </AnchorPane>
    </center>

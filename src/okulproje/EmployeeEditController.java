@@ -79,7 +79,7 @@ public class EmployeeEditController implements Initializable {
         mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
         
-        tableView.setItems(getEmployees());
+        //tableView.setItems(getEmployees());
         
         tableView.setEditable(true);
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -90,7 +90,7 @@ public class EmployeeEditController implements Initializable {
         birthdayColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         
     }
-    
+    /*
     public ObservableList<employeeManagement> getEmployees(){
         ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
         employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
@@ -108,7 +108,7 @@ public class EmployeeEditController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    
+    */
        @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));

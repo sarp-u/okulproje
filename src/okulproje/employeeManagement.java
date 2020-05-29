@@ -2,6 +2,7 @@
 package okulproje;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class employeeManagement {
     private SimpleStringProperty name;
@@ -10,15 +11,17 @@ public class employeeManagement {
     private SimpleStringProperty phoneNo;
     private SimpleStringProperty mail;
     private SimpleStringProperty birthday;
+    private SimpleStringProperty level;
     
     @SuppressWarnings("empty-statement")
-    public employeeManagement(String name, String surname, String tcNo, String phoneNo, String mail, String birthday){
+    public employeeManagement(String name, String surname, String tcNo, String phoneNo, String mail, String birthday, String level){
         this.name = new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
         this.tcNo = new SimpleStringProperty(tcNo);;
         this.phoneNo = new SimpleStringProperty(phoneNo);;
         this.mail = new SimpleStringProperty(mail);;
         this.birthday = new SimpleStringProperty(birthday);;
+        this.level = new SimpleStringProperty(level);;
     }
     
     public String getName(){
@@ -67,6 +70,42 @@ public class employeeManagement {
     
     public void setBirthday(String birthday){
         this.birthday = new SimpleStringProperty(birthday);
+    }
+    
+    public String getLevel(){
+        return level.get();
+    }
+    
+    public void setLevel(String level){
+        this.level = new SimpleStringProperty(level);
+    }
+    
+    public StringProperty nameProperty(){
+        return name;
+    }
+    
+    public StringProperty surNameProperty(){
+        return surname;
+    }
+    
+    public StringProperty tcNoProperty(){
+        return tcNo;
+    }
+    
+    public StringProperty phoneNoProperty(){
+        return phoneNo;
+    }
+    
+    public StringProperty mailProperty(){
+        return mail;
+    }
+    
+    public StringProperty birthdayProperty(){
+        return birthday;
+    }
+    
+    public StringProperty levelProperty(){
+        return level;
     }
 
 }

@@ -44,6 +44,7 @@ public class EmployeeAddController implements Initializable {
     @FXML private TextField phoneNoTextField;
     @FXML private TextField mailTextField;
     @FXML private TextField birthdayTextField;
+    @FXML private TextField levelTextField;
     
     
     @Override
@@ -55,10 +56,10 @@ public class EmployeeAddController implements Initializable {
         mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
         
-        tableView.setItems(getEmployees());
+        //tableView.setItems(getEmployees());
     }
     
-    public ObservableList<employeeManagement> getEmployees(){
+    /*public ObservableList<employeeManagement> getEmployees(){
         ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
         employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
         employee.add(new employeeManagement("Aysu","Aksu","38425","0543","e1705","13.12"));
@@ -76,7 +77,7 @@ public class EmployeeAddController implements Initializable {
         
         tableView.getItems().add(newemployee);
     }
-    
+    */
     @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));

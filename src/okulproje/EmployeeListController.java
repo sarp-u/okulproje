@@ -1,16 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package okulproje;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,11 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author fener
- */
+
 public class EmployeeListController implements Initializable {
     
     @FXML private TableView<employeeManagement> tableView;
@@ -37,25 +33,35 @@ public class EmployeeListController implements Initializable {
     @FXML private TableColumn<employeeManagement, String> phoneNoColumn;
     @FXML private TableColumn<employeeManagement, String> mailColumn;
     @FXML private TableColumn<employeeManagement, String> birthdayColumn;
+    @FXML private TableColumn<employeeManagement, String> levelColumn;
+    
+    private ObservableList<employeeManagement> data;
+    private dataBase dc;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        dc = new dataBase();
+    }
+    
+    @FXML
+    private void loadDataFromDataBase(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        
+        ResultSet rs = conn.createStatement().executeQuery("select * from employees");
+        while (rs.next()){
+            data.add(new employeeManagement(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+        }
         nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
         surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
         tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
         phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
         mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
         birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
+        levelColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("level"));
         
-        tableView.setItems(getEmployees());
-    }
-    
-    public ObservableList<employeeManagement> getEmployees(){
-        ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
-        employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
-        employee.add(new employeeManagement("Aysu","Aksu","38425","0543","e1705","13.12"));
-        employee.add(new employeeManagement("Umut","Yesildal","12345","0512","e1705","11.01"));
-        return employee;
+        tableView.setItems(null);
+        tableView.setItems(data);
     }
 
     @FXML

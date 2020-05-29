@@ -165,6 +165,12 @@
                   <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
               </columns>
             </TableView>
+            <TextField fx:id="levelTextField" layoutX="646.0" layoutY="235.0" />
+            <Text layoutX="651.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seviye">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>
