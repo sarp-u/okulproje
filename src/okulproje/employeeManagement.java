@@ -24,6 +24,10 @@ public class employeeManagement {
         this.level = new SimpleStringProperty(level);;
     }
     
+    public employeeManagement(String name){
+        this.name = new SimpleStringProperty(name);
+    }
+    
     public String getName(){
         return name.get();
     }

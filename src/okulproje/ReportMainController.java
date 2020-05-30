@@ -10,7 +10,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -119,14 +125,28 @@ public class ReportMainController implements Initializable {
     ObservableList result3List = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> res3;
     
+    ObservableList dataDenemeList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> dataDeneme;
+    
     // CheckBox
     @FXML private CheckBox buttWeld;
     @FXML private CheckBox filletWeld;
     
     
+    private ObservableList<employeeManagement> data;
+    private dataBase dc;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        startAll();
+        dc = new dataBase();
+        try {
+            startAll();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ReportMainController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ReportMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -1142,7 +1162,20 @@ public class ReportMainController implements Initializable {
         res3.getItems().addAll(result3List);
     }
     
-    public void startAll(){
+    public void dataDenemeSelect() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        
+        ResultSet rs = conn.createStatement().executeQuery("select first_name from employees");
+        while (rs.next()){
+            dataDeneme.getItems().addAll(rs.getString("first_name"));
+        }
+        dataDenemeList.addAll(data);
+        
+
+    }
+    
+    public void startAll() throws ClassNotFoundException, SQLException{
         customerSelect();
         projectNameSelect();
         inspectionPlaceSelect();
@@ -1162,6 +1195,7 @@ public class ReportMainController implements Initializable {
         result1Select();
         result2Select();
         result3Select();
+        dataDenemeSelect();
     }
     
     

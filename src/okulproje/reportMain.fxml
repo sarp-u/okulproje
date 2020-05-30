@@ -1556,7 +1556,7 @@
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <ChoiceBox fx:id="deneme" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="dataDeneme" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
