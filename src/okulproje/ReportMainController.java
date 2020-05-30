@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package okulproje;
 
 import java.awt.image.BufferedImage;
@@ -85,6 +81,11 @@ public class ReportMainController implements Initializable {
     @FXML private TextField diameter3;
     @FXML private TextField defectType3;
     @FXML private TextField defectLoc3;
+    @FXML private TextField date9;
+    @FXML private TextField date8;
+    @FXML private TextField date7;
+    @FXML private TextField date6;
+    
     // ChoiceBox
     ObservableList customerList = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> customer;
@@ -124,9 +125,23 @@ public class ReportMainController implements Initializable {
     @FXML private ChoiceBox<String> res2;
     ObservableList result3List = FXCollections.observableArrayList();
     @FXML private ChoiceBox<String> res3;
+    ObservableList customer9List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> customer9;
     
-    ObservableList dataDenemeList = FXCollections.observableArrayList();
-    @FXML private ChoiceBox<String> dataDeneme;
+    
+    // data baseden gelenler
+    ObservableList dataName1List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> dataName1;
+    ObservableList dataName2List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> dataName2;
+    ObservableList dataName3List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> dataName3;
+    ObservableList levelList = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> level;
+    ObservableList level2List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> level2;
+    ObservableList level3List = FXCollections.observableArrayList();
+    @FXML private ChoiceBox<String> level3;
     
     // CheckBox
     @FXML private CheckBox buttWeld;
@@ -142,9 +157,7 @@ public class ReportMainController implements Initializable {
         dc = new dataBase();
         try {
             startAll();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReportMainController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ReportMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -920,35 +933,42 @@ public class ReportMainController implements Initializable {
         mysheet.mergeCells(col0,row39,col2,row39);
         mysheet.addCell(new Label(col0,row39,"Adı Soyadı/ Name Surname"));
         mysheet.mergeCells(col3,row39,col5,row39);
-        mysheet.addCell(new Label(col3,row39,""));
+        String nameSelected = dataName1.getValue();
+        mysheet.addCell(new Label(col3,row39, nameSelected));
         mysheet.mergeCells(col6,row39,col8,row39);
-        mysheet.addCell(new Label(col6,row39,""));
+        String name2Selected = dataName2.getValue();
+        mysheet.addCell(new Label(col6,row39,name2Selected));
         mysheet.mergeCells(col9,row39,col10,row39);
-        mysheet.addCell(new Label(col9,row39,""));
+        String name3Selected = dataName3.getValue();
+        mysheet.addCell(new Label(col9,row39,name3Selected));
         mysheet.mergeCells(col11,row39,col13,row39);
-        mysheet.addCell(new Label(col11,row39,""));
+        String customer9Selected = customer9.getValue();
+        mysheet.addCell(new Label(col11,row39, customer9Selected));
         
         mysheet.mergeCells(col0,row40,col2,row40);
         mysheet.addCell(new Label(col0,row40,"Seviye/ Level"));
         mysheet.mergeCells(col3,row40,col5,row40);
-        mysheet.addCell(new Label(col3,row40,""));
+        String levelSelected = level.getValue();
+        mysheet.addCell(new Label(col3,row40,levelSelected));
         mysheet.mergeCells(col6,row40,col8,row40);
-        mysheet.addCell(new Label(col6,row40,""));
+        String level2Selected = level2.getValue();
+        mysheet.addCell(new Label(col6,row40,level2Selected));
         mysheet.mergeCells(col9,row40,col10,row40);
-        mysheet.addCell(new Label(col9,row40,""));
+        String level3Selected = level3.getValue();
+        mysheet.addCell(new Label(col9,row40,level3Selected));
         mysheet.mergeCells(col11,row40,col13,row40);
         mysheet.addCell(new Label(col11,row40,""));
         
         mysheet.mergeCells(col0,row41,col2,row41);
         mysheet.addCell(new Label(col0,row41,"Tarih/ Date"));
         mysheet.mergeCells(col3,row41,col5,row41);
-        mysheet.addCell(new Label(col3,row41,""));
+        mysheet.addCell(new Label(col3,row41,date9.getText()));
         mysheet.mergeCells(col6,row41,col8,row41);
-        mysheet.addCell(new Label(col6,row41,""));
+        mysheet.addCell(new Label(col6,row41,date8.getText()));
         mysheet.mergeCells(col9,row41,col10,row41);
-        mysheet.addCell(new Label(col9,row41,""));
+        mysheet.addCell(new Label(col9,row41,date7.getText()));
         mysheet.mergeCells(col11,row41,col13,row41);
-        mysheet.addCell(new Label(col11,row41,""));
+        mysheet.addCell(new Label(col11,row41,date6.getText()));
         
         mysheet.mergeCells(col0,row42,col2,row43);
         mysheet.addCell(new Label(col0,row42,"İmza/ Signature"));
@@ -1000,6 +1020,16 @@ public class ReportMainController implements Initializable {
         String customer4 = "YILDIZ GEMİ";
         customerList.addAll(customer1, customer2, customer3, customer4);
         customer.getItems().addAll(customerList);
+    }
+    
+    private void customer9Select(){
+        customer9List.removeAll(customer9List);
+        String customer1 = "SARP GEMİ";
+        String customer2 = "AKSU GEMİ";
+        String customer3 = "YESİLDAL GEMİ";
+        String customer4 = "YILDIZ GEMİ";
+        customer9List.addAll(customer1, customer2, customer3, customer4);
+        customer9.getItems().addAll(customer9List);
     }
     
     private void projectNameSelect(){
@@ -1165,18 +1195,68 @@ public class ReportMainController implements Initializable {
     public void dataDenemeSelect() throws ClassNotFoundException, SQLException{
         Connection conn = dc.Connect();
         data = FXCollections.observableArrayList();
-        
-        ResultSet rs = conn.createStatement().executeQuery("select first_name from employees");
+        ResultSet rs = conn.createStatement().executeQuery("select concat(first_name, last_name)  from employees");
         while (rs.next()){
-            dataDeneme.getItems().addAll(rs.getString("first_name"));
+            dataName1.getItems().addAll(rs.getString("concat(first_name, last_name)"));
         }
-        dataDenemeList.addAll(data);
+        dataName1List.addAll(data);
+    }
+    
+    public void dataDeneme2Select() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        ResultSet rs = conn.createStatement().executeQuery("select concat(first_name, last_name)  from employees");
+        while (rs.next()){
+            dataName2.getItems().addAll(rs.getString("concat(first_name, last_name)"));
+        }
+        dataName2List.addAll(data);
+    }
+    
         
-
+    public void dataDeneme3Select() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        ResultSet rs = conn.createStatement().executeQuery("select concat(first_name, last_name)  from employees");
+        while (rs.next()){
+            dataName3.getItems().addAll(rs.getString("concat(first_name, last_name)"));
+        }
+        dataName3List.addAll(data);
+    }
+    
+    public void levelSelect() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        ResultSet rs = conn.createStatement().executeQuery("select distinct level from employees order by level desc");
+        while (rs.next()){
+            level.getItems().addAll(rs.getString("level"));
+        }
+        levelList.addAll(data);
+    }
+    
+    public void level2Select() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        ResultSet rs = conn.createStatement().executeQuery("select distinct level from employees order by level desc");
+        while (rs.next()){
+            level2.getItems().addAll(rs.getString("level"));
+        }
+        level2List.addAll(data);
+    }
+    
+    
+    public void level3Select() throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        data = FXCollections.observableArrayList();
+        ResultSet rs = conn.createStatement().executeQuery("select distinct level from employees order by level desc");
+        while (rs.next()){
+            level3.getItems().addAll(rs.getString("level"));
+        }
+        level3List.addAll(data);
     }
     
     public void startAll() throws ClassNotFoundException, SQLException{
         customerSelect();
+        customer9Select();
         projectNameSelect();
         inspectionPlaceSelect();
         inspectionScopeSelect();
@@ -1196,6 +1276,11 @@ public class ReportMainController implements Initializable {
         result2Select();
         result3Select();
         dataDenemeSelect();
+        dataDeneme2Select();
+        dataDeneme3Select();
+        levelSelect();
+        level2Select();
+        level3Select();
     }
     
     

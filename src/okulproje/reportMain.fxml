@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="2000.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
@@ -1541,62 +1541,57 @@
                               <Insets left="100.0" top="1.0" />
                            </GridPane.margin>
                         </Text>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <TextField fx:id="date9" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <TextField fx:id="date8" GridPane.columnIndex="2" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <TextField fx:id="date7" GridPane.columnIndex="3" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <ChoiceBox fx:id="dataDeneme" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="dataName1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <ChoiceBox fx:id="level" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="dataName2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <ChoiceBox fx:id="level2" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="dataName3" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <ChoiceBox fx:id="level3" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <ChoiceBox fx:id="customer9" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </ChoiceBox>
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                           <GridPane.margin>
-                              <Insets left="20.0" right="20.0" />
-                           </GridPane.margin>
-                        </ChoiceBox>
-                        <TextField GridPane.columnIndex="4" GridPane.rowIndex="3">
+                        <TextField fx:id="date6" GridPane.columnIndex="4" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
