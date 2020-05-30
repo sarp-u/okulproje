@@ -26,6 +26,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
@@ -46,44 +47,86 @@ public class EmployeeEditController implements Initializable {
     @FXML private TableColumn<employeeManagement, String> mailColumn;
     @FXML private TableColumn<employeeManagement, String> birthdayColumn;
     @FXML private TableColumn<employeeManagement, String> levelColumn;
+    @FXML private TextField oldName;
+    @FXML private TextField newName;
+    @FXML private TextField oldSurName;
+    @FXML private TextField newSurname;
+    @FXML private TextField oldTcNo;
+    @FXML private TextField newTcNo;
+    @FXML private TextField oldPhoneNo;
+    @FXML private TextField newPhoneNo;
+    @FXML private TextField oldMail;
+    @FXML private TextField newMail;
+    @FXML private TextField oldBirthday;
+    @FXML private TextField newBirthday;
+    @FXML private TextField oldLevel;
+    @FXML private TextField newLevel;
+    
     
     private ObservableList<employeeManagement> data;
     private dataBase dc;
     
-    public void changeNameCell(CellEditEvent  editedCell) throws ClassNotFoundException, SQLException{
+    @FXML
+    private void changeName(ActionEvent event) throws ClassNotFoundException, SQLException{
         Connection conn = dc.Connect();
         Statement stmt;
         stmt = conn.createStatement();
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setName(editedCell.getNewValue().toString());
-        String first_name = nameColumn.getText();
-        stmt.executeUpdate("INSERT INTO employees (first_name) VALUES (" +employeeSelected.getName()+ ")");
+        stmt.executeUpdate("update employees set first_name ='" + newName.getText() + "' WHERE first_name = '" + oldName.getText() + "';");
         conn.close();
     }
     
-    public void changeSurNameCell(CellEditEvent  editedCell){
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setSurname(editedCell.getNewValue().toString());
+    @FXML
+    private void changeSurName(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set last_name ='" + newSurname.getText() + "' WHERE last_name = '" + oldSurName.getText() + "';");
+        conn.close();
     }
     
-    public void changeTcNoCell(CellEditEvent  editedCell){
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setTcNo(editedCell.getNewValue().toString());
+    @FXML
+    private void changeTcNo(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set tcNo ='" + newTcNo.getText() + "' WHERE tcNo = '" + oldTcNo.getText() + "';");
+        conn.close();
     }
     
-    public void changePhoneNoCell(CellEditEvent  editedCell){
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setPhoneNo(editedCell.getNewValue().toString());
+    @FXML
+    private void changePhoneNo(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set phoneNo ='" + newPhoneNo.getText() + "' WHERE phoneNo = '" + oldPhoneNo.getText() + "';");
+        conn.close();
     }
     
-    public void changeMailCell(CellEditEvent  editedCell){
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setMail(editedCell.getNewValue().toString());
+    @FXML
+    private void changeMail(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set mail ='" + newMail.getText() + "' WHERE mail = '" + oldMail.getText() + "';");
+        conn.close();
     }
-      
-    public void changeBirthDayCell(CellEditEvent  editedCell){
-        employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
-        employeeSelected.setBirthday(editedCell.getNewValue().toString());
+    
+    @FXML
+    private void changeBirthday(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set birthday ='" + newBirthday.getText() + "' WHERE birthday = '" + oldBirthday.getText() + "';");
+        conn.close();
+    }
+    
+    @FXML
+    private void changeLevel(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        stmt.executeUpdate("update employees set level ='" + newLevel.getText() + "' WHERE level = '" + oldLevel.getText() + "';");
+        conn.close();
     }
       
       

@@ -113,18 +113,38 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableView" layoutX="151.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tableView" layoutX="151.0" layoutY="100.0" prefHeight="547.0" prefWidth="1030.0" AnchorPane.bottomAnchor="353.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn fx:id="nameColumn" onEditCommit="#changeNameCell" prefWidth="150.0" text="İsim" />
-                <TableColumn fx:id="surnameColumn" onEditCommit="#changeSurNameCell" prefWidth="150.0" text="Soyisim" />
-                  <TableColumn fx:id="tcNoColumn" onEditCommit="#changeTcNoCell" prefWidth="150.0" text="Tc Kimlik" />
-                  <TableColumn fx:id="phoneNoColumn" onEditCommit="#changePhoneNoCell" prefWidth="150.0" text="Telefon No" />
-                  <TableColumn fx:id="mailColumn" onEditCommit="#changeMailCell" prefWidth="150.0" text="E-Mail" />
-                  <TableColumn fx:id="birthdayColumn" onEditCommit="#changeBirthDayCell" prefWidth="150.0" text="Doğum Tarihi" />
-                  <TableColumn fx:id="levelColumn" prefWidth="129.0" text="Level" />
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="İsim" />
+                <TableColumn fx:id="surnameColumn" prefWidth="150.0" text="Soyisim" />
+                  <TableColumn fx:id="tcNoColumn" prefWidth="150.0" text="Tc Kimlik" />
+                  <TableColumn fx:id="phoneNoColumn" prefWidth="150.0" text="Telefon No" />
+                  <TableColumn fx:id="mailColumn" prefWidth="150.0" text="E-Mail" />
+                  <TableColumn fx:id="birthdayColumn" prefWidth="150.0" text="Doğum Tarihi" />
+                  <TableColumn fx:id="levelColumn" prefWidth="129.0" text="Seviye" />
               </columns>
             </TableView>
-            <Button layoutX="510.0" layoutY="574.0" mnemonicParsing="false" text="Düzenle" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="30.0" />
+            <Button layoutX="122.0" layoutY="651.0" mnemonicParsing="false" onAction="#changeName" text="Kayıt Et" AnchorPane.bottomAnchor="224.0" AnchorPane.rightAnchor="849.0" />
+            <TextField fx:id="oldName" layoutX="32.0" layoutY="578.0" promptText="Eski Ad" />
+            <TextField fx:id="newName" layoutX="32.0" layoutY="619.0" promptText="Yeni Ad" />
+            <TextField fx:id="newSurname" layoutX="214.0" layoutY="619.0" promptText="Yeni Soyisim" />
+            <TextField fx:id="oldSurName" layoutX="214.0" layoutY="578.0" promptText="Eski Soyisim" />
+            <TextField fx:id="oldTcNo" layoutX="386.0" layoutY="578.0" promptText="Eski Tc no" />
+            <TextField fx:id="newTcNo" layoutX="386.0" layoutY="619.0" promptText="Yeni Tc no" />
+            <TextField fx:id="newMail" layoutX="740.0" layoutY="619.0" promptText="Yeni e-mail" />
+            <TextField fx:id="oldMail" layoutX="740.0" layoutY="578.0" promptText="Eski e-mail" />
+            <TextField fx:id="oldPhoneNo" layoutX="557.0" layoutY="578.0" promptText="Eski Telefon No" />
+            <TextField fx:id="newPhoneNo" layoutX="557.0" layoutY="619.0" promptText="Yeni Telefon No" />
+            <TextField fx:id="newBirthday" layoutX="32.0" layoutY="774.0" promptText="Yeni Doğum Tarihi" />
+            <TextField fx:id="oldBirthday" layoutX="32.0" layoutY="733.0" promptText="Eski Doğum Tarihi" />
+            <TextField fx:id="newLevel" layoutX="214.0" layoutY="774.0" promptText="Yeni Seviye" />
+            <TextField fx:id="oldLevel" layoutX="214.0" layoutY="733.0" promptText="Eski Seviye" />
+            <Button layoutX="307.0" layoutY="651.0" mnemonicParsing="false" onAction="#changeSurName" text="Kayıt Et" />
+            <Button layoutX="468.0" layoutY="651.0" mnemonicParsing="false" onAction="#changeTcNo" text="Kayıt Et" />
+            <Button layoutX="650.0" layoutY="651.0" mnemonicParsing="false" onAction="#changePhoneNo" text="Kayıt Et" />
+            <Button layoutX="307.0" layoutY="809.0" mnemonicParsing="false" onAction="#changeLevel" text="Kayıt Et" />
+            <Button layoutX="125.0" layoutY="809.0" mnemonicParsing="false" onAction="#changeBirthday" text="Kayıt Et" />
+            <Button layoutX="833.0" layoutY="651.0" mnemonicParsing="false" onAction="#changeMail" text="Kayıt Et" />
          </children>
       </AnchorPane>
    </center>
