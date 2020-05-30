@@ -7,9 +7,16 @@ package okulproje;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -38,10 +45,20 @@ public class EmployeeEditController implements Initializable {
     @FXML private TableColumn<employeeManagement, String> phoneNoColumn;
     @FXML private TableColumn<employeeManagement, String> mailColumn;
     @FXML private TableColumn<employeeManagement, String> birthdayColumn;
+    @FXML private TableColumn<employeeManagement, String> levelColumn;
     
-    public void changeNameCell(CellEditEvent  editedCell){
+    private ObservableList<employeeManagement> data;
+    private dataBase dc;
+    
+    public void changeNameCell(CellEditEvent  editedCell) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
         employeeManagement employeeSelected = tableView.getSelectionModel().getSelectedItem();
         employeeSelected.setName(editedCell.getNewValue().toString());
+        String first_name = nameColumn.getText();
+        stmt.executeUpdate("INSERT INTO employees (first_name) VALUES (" +employeeSelected.getName()+ ")");
+        conn.close();
     }
     
     public void changeSurNameCell(CellEditEvent  editedCell){
@@ -72,31 +89,36 @@ public class EmployeeEditController implements Initializable {
       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
-        surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
-        tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
-        phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
-        mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
+        nameColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        surnameColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        tcNoColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        phoneNoColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        mailColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        birthdayColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        levelColumn.setCellFactory(TextFieldTableCell.<employeeManagement>forTableColumn());
+        dc = new dataBase();
+        try {
+            Connection conn = dc.Connect();
+            data = FXCollections.observableArrayList();
+            
+            ResultSet rs = conn.createStatement().executeQuery("select * from employees");
+            while (rs.next()){
+                data.add(new employeeManagement(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
+            }
+            nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
+            surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
+            tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
+            phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
+            mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
+            birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
+            levelColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("level"));
+            
+            tableView.setItems(null);
+            tableView.setItems(data);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(EmployeeEditController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        //tableView.setItems(getEmployees());
-        
-        tableView.setEditable(true);
-        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        surnameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        tcNoColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        phoneNoColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        mailColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        birthdayColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        
-    }
-    /*
-    public ObservableList<employeeManagement> getEmployees(){
-        ObservableList<employeeManagement> employee = FXCollections.observableArrayList();
-        employee.add(new employeeManagement("Ugur","Sarp","28141","0505","e1705","24.05"));
-        employee.add(new employeeManagement("Aysu","Aksu","38425","0543","e1705","13.12"));
-        employee.add(new employeeManagement("Umut","Yesildal","12345","0512","e1705","11.01"));
-        return employee;
     }
 
     @FXML
@@ -108,7 +130,7 @@ public class EmployeeEditController implements Initializable {
         window.setScene(tableViewScene);
         window.show();
     }
-    */
+    
        @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));
@@ -164,5 +186,7 @@ public class EmployeeEditController implements Initializable {
     private void handleClose(MouseEvent event) {
         System.exit(0);
     }
+    
+
     
 }
