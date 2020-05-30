@@ -154,7 +154,7 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Button layoutX="700.0" layoutY="492.0" mnemonicParsing="false" onAction="#newPersonButtonPushed" text="Kayıt Et" />
+            <Button layoutX="700.0" layoutY="492.0" mnemonicParsing="false" onAction="#addPerson" text="Kayıt Et" />
             <TableView fx:id="tableView" layoutX="6.0" layoutY="577.0" prefHeight="285.0" prefWidth="1030.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <columns>
                 <TableColumn fx:id="nameColumn" prefWidth="150.0" text="İsim" />

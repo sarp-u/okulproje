@@ -24,9 +24,7 @@ import javafx.stage.Stage;
  */
 public class EmployeeMainController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

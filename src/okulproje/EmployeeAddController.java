@@ -11,11 +11,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -59,31 +61,9 @@ public class EmployeeAddController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            dc = new dataBase();
-            Connection conn = dc.Connect();
-            data = FXCollections.observableArrayList();
-            ResultSet rs = conn.createStatement().executeQuery("select * from employees");
-            while (rs.next()){
-                data.add(new employeeManagement(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-            }
-            nameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("name"));
-            surnameColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("surname"));
-            tcNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("tcNo"));
-            phoneNoColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("phoneNo"));
-            mailColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("mail"));
-            birthdayColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("birthday"));
-            levelColumn.setCellValueFactory(new PropertyValueFactory<employeeManagement, String> ("level"));
-            
-            tableView.setItems(null);
-            tableView.setItems(data);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EmployeeAddController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(EmployeeAddController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        dc = new dataBase();
     }
-
+    
     @FXML
     private void handleReportScene(MouseEvent event) throws IOException{
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("reportMain.fxml"));
@@ -147,6 +127,24 @@ public class EmployeeAddController implements Initializable {
     @FXML
     private void handleClose(MouseEvent event) {
         System.exit(0);
+    }
+    
+    @FXML
+    private void addPerson(ActionEvent event) throws ClassNotFoundException, SQLException{
+        Connection conn = dc.Connect();
+        Statement stmt;
+        stmt = conn.createStatement();
+        String first_name = nameTextField.getText();
+        String last_name = surnameTextField.getText();
+        String tcNo = tcNoTextField.getText();
+        String phoneNo = phoneNoTextField.getText();
+        String mail = mailTextField.getText();
+        String birthday = birthdayTextField.getText();
+        String level = levelTextField.getText();
+        //stmt.executeUpdate("INSERT INTO employees (first_name) VALUES (" +first_name+ ")");
+        stmt.executeUpdate("INSERT INTO employees (first_name,last_name,tcNo,phoneNo,mail,birthday,level) VALUES('" +first_name+ "','" + last_name + "','" + tcNo + "','" + phoneNo + "','" + mail + "','" + birthday + "','" + level + "')");
+        conn.close();
+       
     }
 
     
