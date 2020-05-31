@@ -14,17 +14,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import jxl.Workbook;
@@ -33,6 +40,11 @@ import jxl.write.WritableImage;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 /**
  * FXML Controller class
@@ -147,6 +159,9 @@ public class ReportMainController implements Initializable {
     @FXML private CheckBox buttWeld;
     @FXML private CheckBox filletWeld;
     
+    @FXML private BorderPane borderPane;
+    @FXML private ScrollPane scrollPane;
+    @FXML private AnchorPane anchorPane;
     
     private ObservableList<employeeManagement> data;
     private dataBase dc;
@@ -1011,7 +1026,44 @@ public class ReportMainController implements Initializable {
     private void handleClose(MouseEvent event) {
         System.exit(0);
     }
+    
+    
+    @FXML
+    private void handlePdf(MouseEvent event){
+        try {
+        javafx.scene.image.WritableImage nodeshot = anchorPane.snapshot(new SnapshotParameters(), null);
+             ByteArrayOutputStream output = new ByteArrayOutputStream();
+            ImageIO.write(SwingFXUtils.fromFXImage(nodeshot, null), "png", output);
+            output.close();
 
+            PDDocument doc = new PDDocument();
+            PDPage page = new PDPage();
+            PDImageXObject pdimage;
+            PDPageContentStream content;
+
+            pdimage = PDImageXObject.createFromByteArray(doc, output.toByteArray(), "png");
+            content = new PDPageContentStream(doc, page);
+
+            // fit image to media box of page
+            PDRectangle box = page.getMediaBox();
+            double factor = Math.min(box.getWidth() / nodeshot.getWidth(), box.getHeight() / nodeshot.getHeight());
+
+            float height = (float) (nodeshot.getHeight() * factor);
+            // beware of inverted y axis here
+            content.drawImage(pdimage, 0, box.getHeight() - height, (float) (nodeshot.getWidth() * 0.6), height);
+
+            content.close();
+            doc.addPage(page);
+
+            File outputFile = new File("C:\\Users\\fener\\OneDrive\\Masaüstü\\PDFNode.pdf");
+
+            doc.save(outputFile);
+            doc.close();
+    } catch (Exception e) {
+    }
+    }
+    
+    
     private void customerSelect(){
         customerList.removeAll(customerList);
         String customer1 = "SARP GEMİ";

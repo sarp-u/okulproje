@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="okulproje.ReportMainController">
    <left>
       <HBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #3a2b4f;">
          <children>
@@ -73,7 +73,7 @@
                         <Image url="@../images/list.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-16.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="420.0">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="-16.0" layoutY="193.0" onMouseClicked="#handlePdf" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="420.0">
                      <image>
                         <Image url="@../images/pdf.png" />
                      </image>
@@ -134,7 +134,7 @@
    <center>
       <ScrollPane prefHeight="900.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1927.0" prefWidth="1015.0" style="-fx-background-color: #ffffff;">
+          <AnchorPane fx:id="anchorPane" minHeight="0.0" minWidth="0.0" prefHeight="1927.0" prefWidth="1020.0" style="-fx-background-color: #ffffff;">
                <children>
                   <GridPane gridLinesVisible="true" layoutX="179.0" layoutY="10.0" prefHeight="105.0" prefWidth="800.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
