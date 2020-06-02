@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package okulproje;
 
 import java.io.IOException;
@@ -24,7 +20,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -32,11 +27,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author fener
- */
+
 public class EmployeeEditController implements Initializable {
 
     @FXML private TableView<employeeManagement> tableView;
@@ -229,7 +220,5 @@ public class EmployeeEditController implements Initializable {
     private void handleClose(MouseEvent event) {
         System.exit(0);
     }
-    
-
     
 }
