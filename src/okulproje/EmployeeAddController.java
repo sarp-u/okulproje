@@ -21,7 +21,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
-
 public class EmployeeAddController implements Initializable {
 
     @FXML private TableView<employeeManagement> tableView;

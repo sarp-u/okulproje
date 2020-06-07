@@ -12,10 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 public class FXMLDocumentController implements Initializable {
-    
-
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

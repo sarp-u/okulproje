@@ -1327,6 +1327,4 @@ public class ReportMainController implements Initializable {
         level2Select();
         level3Select();
     }
-    
-    
 }
