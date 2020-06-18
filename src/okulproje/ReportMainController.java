@@ -1,4 +1,4 @@
-
+// Kamil Uğur Sarp 170503033 18.06.2020 INF202 Proje
 package okulproje;
 
 import java.awt.image.BufferedImage;
